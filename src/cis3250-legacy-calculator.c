@@ -146,7 +146,13 @@ float Aryprint(char*screen,float ans)
 return 0;
 }
 
-
+	/*
+	#
+	#
+	#  NOAH
+	#
+	#
+	*/
 
 int main(int argc,char*argv[])
 {
@@ -275,6 +281,14 @@ if(menu==2){
 		spprintf("Cosine of"," ",a,c);
 	}
 
+	/*
+	#
+	#
+	# LUCA BOZZETTO
+	#
+	#
+	*/
+
 	if(smenu==6){
 		a=input("Enter your value: ");
 		r1=sine(a);
@@ -400,6 +414,14 @@ for(i=0;i<n;i++){
 	}
 	}
 }
+
+	/*
+	#
+	#
+	# RYAN 
+	#
+	#
+	*/
 
 temp=numtemp[0];
 for(i=1;i<n;i++){

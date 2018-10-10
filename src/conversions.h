@@ -156,7 +156,7 @@ void time()
 
       		   }
 
-       		   if( to == 8) {
+       		   if( to == 8 ) {
 
  		          t2 = t1 / ( 3600 * 24 * 365.25 * 10 );
 
@@ -172,105 +172,180 @@ void time()
 
                 		printf("\n\n\n\t\t%f seconds = %f decades", t1, t2);
             
-			  }
+					  }
 
         	  }
+		  
+		  	
+		   if( to==9 ) {
 
-         if(to==9){
-            t2=t1/(3600*24*365.25*100);
-            if(t2<=1&&t2>=0){
-                printf("\n\n\n\t\t%f seconds = %f century",t1,t2);
-            }
-            else if(t1==1){
-                printf("\n\n\n\t\t1 second = %f century",t2);
-            }
-            else {
-                printf("\n\n\n\t\t%f seconds = %f centuries",t1,t2);
-            }
-        }
-         if(to==10){
-            t2=t1/(3600*24*365.25*1000);
-            if(t2<=1&&t2>=0){
-                printf("\n\n\n\t\t%f seconds = %f millenium",t1,t2);
-            }
-            else if(t1==1){
-                printf("\n\n\n\t\t1 second = %f millenium",t2);
-            }
-            else {
-                printf("\n\n\n\t\t%f seconds = %f milleniums",t1,t2);
-            }
-        }
-         if(to==12){
-            t2=t1/(3600*24*365.25*30);
-            if(t2<=1&&t2>=0){
-                printf("%f seconds = %f Generation",t1,t2);
-            }
-            else if(t1==1){
-                printf("1 second = %f Generation",t2);
-            }
-            else {
-                printf("%f seconds = %f Generations",t1,t2);
-            }
-        }
+			  t2 = t1/ ( 3600 * 24 * 365.25 * 100 );
 
-        }}
-}
+			  if( t2 <= 1 && t2 >= 0 ) {
 
-void temp(){
-int from,to;
-double t1,t2,t3;
+				printf("\n\n\n\t\t%f seconds = %f century", t1, t2);
 
-printf("\n\n\n\t\t\tCelsius(1)\t\t\tFahrenheit(2)\t\t\tKelvin(3)");
-printf("\n\n\n\t\t\tConvert from(number):");
-scanf("%d",&from);
-printf("\n\n\n\t\t\tConvert to(number):");
-scanf("%d",&to);
-printf("\n\n\n\t\t\tEnter temperature:");
-scanf("%lf",&t1);
+			  } else if( t1==1 ) {
 
-if(from==to){
-    printf("\n\n\n\t\t\t The resulting temperature remains the same; %f",t1);
-}
-else{
-switch(from){
-case 1:
-    switch(to){
-         case 2:
-             t2=t1*9/5+32.0;
-             printf("\n\n\n\t\t\t%fC=%fF",t1,t2);
-             break;
-         case 3:
-             t2=t1+273.15;
-             printf("\n\n\n\t\t\t%fC=%fK",t1,t2);
-             break;
-    }
-break;
-case 2:
-    switch(to){
-        case 1:
-            t2=(t1-32.0)*5/9;
-            printf("\n\n\n\t\t\t%fF=%fC",t1,t2);
-            break;
-        case 3:
-            t1=(t1-32.0)*5/9;
-            t2=t1+273.15;
-            printf("\n\n\n\t\t\t%fF=%fK",t1,t2);
-            break;
+				printf("\n\n\n\t\t1 second = %f century", t2);
 
-    }
-case 3:
-    switch(to){
-        case 1:
-            t2=t1-273.15;
-            printf("\n\n\n\t\t\t%fK=%fC",t1,t2);
-            break;
-        case 2:
-            t2=(t1-273.15)*9/5+32;
-            printf("\n\n\n\t\t\t%fK=%fF",t1,t2);
-            break;
-    }
+			  } else {
+
+				printf("\n\n\n\t\t%f seconds = %f centuries", t1, t2);
+
+	        	  }
+
+		    }//if( to==9 );
+
+		     if( to==10 ) {
+
+			  t2 = t1 / (3600 * 24 * 365.25 * 1000 );
+
+			  if( t2 <= 1 && t2 >= 0 ) {
+
+				printf("\n\n\n\t\t%f seconds = %f millenium", t1, t2);
+
+			  } else if( t1==1 ) {
+
+				printf("\n\n\n\t\t1 second = %f millenium", t2);
+
+			  } else {
+
+				printf("\n\n\n\t\t%f seconds = %f milleniums", t1, t2);
+
+			  } //else
+
+		    }//if( to==10 );
+
+		     if( to==12 ) {
+
+			  t2 = t1 / (3600 * 24 * 365.25 * 30 );
+
+			  if( t2 <= 1 && t2 >= 0 ) {
+
+				printf("%f seconds = %f Generation", t1, t2);
+
+			  } else if(t1==1) {
+
+				printf("1 second = %f Generation", t2);
+
+			  } else {
+
+				printf("%f seconds = %f Generations", t1, t2);
+
+			  }
+
+		      }//if(to==12);
+
+        
+		}//if(from == 1)
+	
+	}//else { 
+	
+}//void time()
+
+void temp() {
+	
+	int from, to;
+	double t1, t2, t3;
+
+	printf("\n\n\n\t\t\tCelsius(1)\t\t\tFahrenheit(2)\t\t\tKelvin(3)");
+	printf("\n\n\n\t\t\tConvert from(number):");
+	scanf("%d", &from);
+	
+	printf("\n\n\n\t\t\tConvert to(number):");
+	scanf("%d", &to);
+	
+	printf("\n\n\n\t\t\tEnter temperature:");
+	scanf("%lf", &t1);
+
+	if( from == to ) {
+	    
+		printf("\n\n\n\t\t\t The resulting temperature remains the same; %f", t1);
+	
+	} else {
+	
+		switch(from) {
+			
+			case 1:
+			    
+				switch(to) {
+				 
+					case 2:
+					    			     
+						t2 = t1 * 9 / 5 + 32.0;
+					    
+						printf("\n\n\n\t\t\t%fC=%fF", t1, t2);
+					   
+						break;	    
+				 
+					case 3:
+				     
+						t2 = t1 + 273.15;
+				     
+						printf("\n\n\n\t\t\t%fC=%fK", t1, t2);
+				     
+						break;
+				
+				}
+			
+				break;
+				
+			case 2:
+			    
+				switch(to) {
+				
+					case 1:
+				    
+						t2 = ( t1 - 32.0 ) * 5 / 9;
+				    
+						printf("\n\n\n\t\t\t%fF=%fC", t1, t2);
+				   
+						break;
+				
+					case 3:
+				   
+						t1 = ( t1 - 32.0 ) * 5 / 9;
+				    
+						t2 = t1 + 273.15;
+				    
+						printf("\n\n\n\t\t\t%fF=%fK", t1, t2);
+				    
+						break;
+
+			    
+			    
+				}
+				
+			
+			case 3:
+			    
+				switch(to) {
+				
+					case 1:
+				    
+						t2 = t1 - 273.15;
+				    
+						printf("\n\n\n\t\t\t%fK=%fC", t1, t2);
+				    
+						break;
+				
+					case 2:
+				    
+						t2 = ( t1 - 273.15 ) * 9 / 5 + 32;
+				    
+						printf("\n\n\n\t\t\t%fK=%fF", t1, t2);
+				   
+						break;
+			    
+				}//switch(to)
 
 
-}
-}
-}
+		
+		
+		}//switch(from)
+	
+	
+	}//else
+	
+}//void temp()

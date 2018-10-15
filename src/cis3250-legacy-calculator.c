@@ -154,132 +154,235 @@ return 0;
 	#
 	*/
 
-int main(int argc,char*argv[])
-{
-	float a,b,c;
-	float r1,r2;
-	char sym;
-	int menu,rmenu,smenu;
+int main(int argc, char* argv[]) {
+    
+    // Initial variable declarations
+	float a, b, c;
+	float r1, r2;
+	int menu, rmenu, smenu;
 
+    // Start of master loop
+    do {
+        
+        // Print starting menu to the user
+        printf("\n======\n");
+        printf("Menu\n");
+        printf("======\n");
+        printf("1. Regular Calculator\n");
+        printf("2. Scientific Calculator\n");
+        printf("3. Acountant Calculator\n");
+        printf("4. Read Help and Notice\n");
+        printf("0. Exit\n");
+        
+        // Get the input choice from the user
+        menu = input("Select Menu: ");
+        system("clear");
 
-do{
-	printf("\n======\n");
-	printf("Menu\n");
-	printf("======\n");
-	printf("1.Regular Calculator\n");
-	printf("2.Scientific Calculator\n");
-	printf("3.Acountant Calculator\n");
-	printf("4.Read Help and Notice\n");
-	printf("0.Exit\n");
-	menu = input("Select Menu: ");//input main menu
-	system("clear");
+        // Handle user choice
+        if (menu == 1) {
+            
+            // User chose the regular calculator
+            
+            // Loop for regular calculator
+            do {
+                
+                // Print regular calculator menu to user
+                printf("\n======================\n");
+                printf("Regular Calculator Menu\n");
+                printf("=======================\n");
+                printf("1. PLUS\n");
+                printf("2. MINUS\n");
+                printf("3. MULTIPLY\n");
+                printf("4. DIVIDE\n");
+                printf("0. BACK\n");
+                
+                // Get the input choice from the user
+                rmenu = input("Select Menu: ");
+                system("clear");
 
-if(menu==1){
+                // Handle regular calculator choice
+                if (rmenu == 1) {
+                    
+                    // User chose addition
+                    
+                    // Get two values from the user
+                    a = input("Enter value 1 st: ");
+                    b = input("Enter value 2 nd: ");
+                    
+                    // Perform the addition
+                    c = plus(a, b);
+                    
+                    // Print the result to the user
+                    printf("\n");
+                    print("sum of", "plus", a, b, c);
+                    
+                }
 
-do{
-	printf("\n======================\n");
-	printf("Regular Calculator Menu\n");
-	printf("=======================\n");
-	printf("1.PLUS\n");
-	printf("2.MINUS\n");
-	printf("3.MULTIPLY\n");
-	printf("4.DIVIDE\n");
-	printf("0.BACK\n");
-	rmenu = input("Select Menu: ");//input regular  menu
-	system("clear");
+                if (rmenu == 2) {
+                    
+                    // User chose subtraction
+                    
+                    // Get two values from the user
+                    a = input("Enter value 1 st: ");
+                    b = input("Enter value 2 nd: ");
+                    
+                    // Perform the subtraction
+                    c = minus(a, b);
+                    
+                    // Print the result to the user
+                    printf("\n");
+                    print("result of", "minus", a, b, c);
+                    
+                }
 
+                if (rmenu == 3) {
+                    
+                    // User chose multiplication
+                    
+                    // Get two values from the user
+                    a = input("Enter value 1 st: ");
+                    b = input("Enter value 2 nd: ");
+                    
+                    // Perform the multiplication
+                    c = mult(a, b);
+                    
+                    // Print the result to the user
+                    printf("\n");
+                    print("result of", "x", a, b, c);
+                    
+                }
 
-	if(rmenu==1){
-		a=input("Enter value 1 st: ");
-		b=input("Enter value 2 nd: ");
-		c=plus(a,b);
-		printf("\n");
-		print("sum of","plus",a,b,c);
-	}
+                if (rmenu == 4) {
+                    
+                    // User chose division
+                    
+                    // Get two values from the user
+                    a = input("Enter value 1 st: ");
+                    b = input("Enter value 2 nd: ");
+                    
+                    // Perform the division
+                    c = divind(a ,b);
+                    
+                    // Print the result to the user
+                    printf("\n");
+                    print("result", "/", a, b, c);
+                    
+                }
 
-	if(rmenu==2){
-		a=input("Enter value 1 st: ");
-		b=input("Enter value 2 nd: ");
-		c=minus(a,b);
-		printf("\n");
-		print("result of","minus",a,b,c);
-	}
+            // Go back to the master menu if user chose 0
+            } while (rmenu != 0);
+            
+        }
 
-	if(rmenu==3){
-		a=input("Enter value 1 st: ");
-		b=input("Enter value 2 nd: ");
-		c=mult(a,b);
-		printf("\n");
-		print("result of","x",a,b,c);
-	}
+        if (menu == 2) {
+            
+            // User chose the scientific calculator
 
-	if(rmenu==4){
-		a=input("Enter value 1 st: ");
-		b=input("Enter value 2 nd: ");
-		c=divind(a,b);
-		printf("\n");
-		print("result","/",a,b,c);
-	}
+            // Loop for the scientific calculator
+            do {
+                
+                // Print scientific calculator menu to user
+                printf("\n===========================\n");
+                printf("Scientific Calculator Menu\n");
+                printf("===========================\n");
+                printf("1. Power function (x^y)\n");
+                printf("2. Factorial Series (x!)\n");
+                printf("3. Fibonacci Series \n");
+                printf("4. Sine (Sin x)\n");
+                printf("5. Cosine (cos x)\n");
+                printf("6. Tangent (Tan x)\n");
+                printf("7. Cosec (cosec x)\n");
+                printf("8. Sec (sec x)\n");
+                printf("9. Cot (cot x)\n");
+                printf("10. Matrix functions\n");
+                printf("11. Conversion functions\n");
+                printf("0. Back\n");
+                
+                // Get menu choice from the user
+                smenu = input("Select Menu: ");
+                system("clear");
 
-}while(rmenu!=0);
-}
+                // Handle scientific menu choice
+                if (smenu == 1) {
+                    
+                    // User chose the power function
+                    
+                    // Get base and power values from user
+                    a = input("Enter base(x): ");
+                    b = input("Enter power(y): ");
+                    
+                    // Perform the power function
+                    c = powerfn(a, b);
+                    
+                    // Print the result to the user
+                    printf("\n");
+                    print("result of", "^", a, b, c);
+                    
+                }
 
-if(menu==2){
+                if (smenu == 2) {
+                    
+                    // User chose the factorial
+                    
+                    // Get the factorial term from the user
+                    a = input("Enter numbers of term: ");
+                    
+                    // Perform the factorial
+                    c = fact(a);
+                    
+                    // Print the result to the user
+                    printf("\n");
+                    spprint("Factorial of", "!", a, c);
+                    
+                }
 
-	do{
-		printf("\n===========================\n");
-		printf("Scientific Calculator Menu\n");
-		printf("===========================\n");
-		printf("1.Power function (x^y)\n");
-		printf("2.Factorial Series (x!)\n");
-		printf("3.Fibonacci Series \n");
-		printf("4.Sine (Sin x)\n");
-		printf("5.Cosine (cos x)\n");
-		printf("6.Tangent (Tan x)\n");
-		printf("7.Cosec (cosec x)\n");
-		printf("8.Sec (sec x)\n");
-		printf("9.Cot (cot x)\n");
-		printf("10.Matrix functions\n");
-		printf("11.Conversion functions\n");
-		printf("0.Back\n");
-		smenu = input("Select Menu: ");
-		system("clear");
+                if (smenu == 3) {
+                    
+                    // User chose the fibonacci series
+                    
+                    // Get the number of terms from the user
+                    a = input("Enter numbers of term: ");
+                    
+                    // Get fibonacci result
+                    c = fib(a);
+                    
+                    // Print the result to the user
+                    printf("\n");
+                    spprint("Fibonacci of", " ", a, c);
+                    
+                }
 
-	if(smenu==1){
-		a=input("Enter base(x): ");
-		b=input("Enter power(y): ");
-		c=powerfn(a,b);
-		printf("\n");
-		print("result of","^",a,b,c);
-	}
+                if (smenu == 4) {
+                    
+                    // User chose the sine function
+                    
+                    // Get value from user
+                    a = input("Enter your value: ");
+                    
+                    // Get sine of value
+                    c = sine(a);
+                    
+                    // Print result to the user
+                    printf("\n");
+                    spprintf("Sine of", " ", a, c);
+                    
+                }
 
-	if(smenu==2){
-		a=input("Enter numbers of term: ");
-		c=fact(a);
-		printf("\n");
-		spprint("Factorial of","!",a,c);
-	}
-
-	if(smenu==3){
-		a=input("Enter numbers of term: ");
-		c=fib(a);
-		printf("\n");
-		spprint("Fibonacci of"," ",a,c);
-	}
-
-	if(smenu==4){
-		a=input("Enter your value: ");
-		c=sine(a);
-		printf("\n");
-		spprintf("Sine of"," ",a,c);
-	}
-
-	if(smenu==5){
-		a=input("Enter your value: ");
-		c=cosine(a);
-		printf("\n");
-		spprintf("Cosine of"," ",a,c);
-	}
+                if (smenu == 5) {
+                    
+                    // User chose the cosine function
+                    
+                    // Get value from user
+                    a = input("Enter your value: ");
+                    
+                    // Get cosine of value
+                    c = cosine(a);
+                    
+                    // Print result to the user
+                    printf("\n");
+                    spprintf("Cosine of", " ", a, c);
+                    
+                }
 
 	/*
 	#

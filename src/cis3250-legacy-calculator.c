@@ -14,7 +14,7 @@ float input(char*inname)
 {
 	float key;
 	char temp[9999];
-	
+
 	do{
 	printf("%s",inname);
 	 if(!scanf("%f",&key)){
@@ -24,7 +24,7 @@ float input(char*inname)
 	else{
 		return key;
 	}
-	}while(1);	 
+	}while(1);
 }
 
 float inputAry(char*inname,int num)
@@ -41,7 +41,7 @@ float inputAry(char*inname,int num)
 	else{
 		return key;
 	}
-	}while(1);	 
+	}while(1);
 }
 
 float plus(float adder,float addin)
@@ -122,7 +122,7 @@ float cosine(float radius)
 int spprint(char*screen,char*sym,int ini,int res)
 {
 	printf("%s %d%s = %d\n",screen,ini,sym,res);
-	
+
 return 0;
 }
 
@@ -418,118 +418,179 @@ for(i=0;i<n;i++){
 	/*
 	#
 	#
-	# RYAN 
+	# RYAN
 	#
 	#
 	*/
 
-temp=numtemp[0];
-for(i=1;i<n;i++){
-	if(numtemp[i]>temp){
-		temp = numtemp[i];
-	}
-}
+			temp = numtemp[0];
 
-if(i==999){//Always False If
+			for(i=1;i<n;i++) {
 
-warp1://Warp form menu
-j=0;
+				if(numtemp[i]>temp) {
 
-for(i=0;i<n;i++){
-	if(numtemp[i]==temp){
-		j++;
-	}
-}
+					temp = numtemp[i];
 
-if(j==1){
-	for(i=0;i<n;i++){
-	if(numtemp[i]==temp){
-		printf("%.4f\n",set[i]);
-	}
-	}
-}
+				}
 
-else{
-	printf("Not have mode value\n");	
-}
-
-}
-
-	 do{
-		printf("\n===========================\n");
-		printf("Accountant Calculator Menu\n");
-		printf("===========================\n");
-		printf("1.Show max\n");
-		printf("2.Show min\n");
-		printf("3.Show x-bar\n");
-		printf("4.Show range\n");
-		printf("5.Show Med\n");
-		printf("6.Show Mode\n");
-		printf("7.Show value(sort)\n");
-		printf("8.Set new value\n");
-		printf("0.Back\n");
-		amenu = input("Select Menu: ");//input acountant  menu
-		system("clear");
-
-		if(amenu==1){
-			printf("\n");
-			Aryprint("Max is",max);
-		}
-
-		if(amenu==2){
-			printf("\n");
-			Aryprint("Min is",min);
-		}
-
-		if(amenu==3){
-			printf("\n");
-			Aryprint("X-bar is",x_bar);
-		}
-
-		if(amenu==4){
-			printf("\n");
-			Aryprint("Range is",max-min);
-		}
-
-		if(amenu==5){
-			printf("\n");
-			Aryprint("Med is",med);
-		}
-
-		if(amenu==6){
-			printf("\n");
-			printf("Mode is: ");
-			goto warp1;
-		}
-
-		if(amenu==7){
-			printf("\n");
-			printf("Set of number is(sort): ");
-			for(i=0;i<n;i++){
-			printf("%.3f ",set[i]);
 			}
+
+			//Always False If
+			if(i==999) {
+
+				//Warp form menu
+				warp1:
+
+				j=0;
+
+				for(i=0;i<n;i++) {
+
+						if(numtemp[i]==temp) {
+
+								j++;
+
+						}
+				}
+
+				if(j==1) {
+
+					for(i=0;i<n;i++) {
+
+						if(numtemp[i]==temp) {
+
+								printf("%.4f\n",set[i]);
+
+						}
+
+					}
+
+				}
+
+				else {
+
+						printf("Not have mode value\n");
+
+				}
+
+			}
+
+			// Start of main loop
+			do {
+
+				// Printing Accountant menu
+				printf("\n===========================\n");
+				printf("Accountant Calculator Menu\n");
+				printf("===========================\n");
+				printf("1.Show max\n");
+				printf("2.Show min\n");
+				printf("3.Show x-bar\n");
+				printf("4.Show range\n");
+				printf("5.Show Med\n");
+				printf("6.Show Mode\n");
+				printf("7.Show value(sort)\n");
+				printf("8.Set new value\n");
+				printf("0.Back\n");
+
+				//input for acountant menu
+				amenu = input("Select Menu: ");
+				system("clear");
+
+				//handle choice
+				if(amenu==1) {
+
+					//prints max value to user
+					printf("\n");
+					Aryprint("Max is",max);
+
+				}
+
+				if(amenu==2) {
+
+					//prints min value to user
+					printf("\n");
+					Aryprint("Min is",min);
+
+				}
+
+				if(amenu==3) {
+
+					//prints x-bar to user
+					printf("\n");
+					Aryprint("X-bar is",x_bar);
+
+				}
+
+				if(amenu==4) {
+
+					//prints range to user
+					printf("\n");
+					Aryprint("Range is",max-min);
+
+				}
+
+				if(amenu==5) {
+
+					//prints median to user
+					printf("\n");
+					Aryprint("Med is",med);
+
+				}
+
+				if(amenu==6) {
+
+					//prints mode to user
+					printf("\n");
+					printf("Mode is: ");
+					goto warp1;
+
+				}
+
+				if(amenu==7) {
+
+					//prints out sorted values
+					printf("\n");
+					printf("Set of number is(sort): ");
+
+					for(i=0;i<n;i++) {
+
+						printf("%.3f ",set[i]);
+
+					}
+
+				}
+
+				if(amenu==8) {
+
+					//goes to initial warp and prompts for values
+					goto warp;
+
+				}
+
+			// Continue while amenu is not equal to 0
+			} while(amenu!=0);
+
 		}
 
-		if(amenu==8){
-			goto warp;
-		}
 
-		}while(amenu!=0);
-	}
+		if(menu==4) {
 
-	if(menu==4){
-		char text;
-
+			char text;
+			
+			//prints out help guidelines
 			help = fopen("User_helping.txt","r");
-		
-			while((text=fgetc(help))!=EOF){
+
+			while((text=fgetc(help))!=EOF) {
+
 				fprintf(stdout,"%c",text);
+
 			}
 
 			fclose(help);
-	}
-}while(menu!=0);
 
-return 0;
+		}
+
+	// Continue while menu is not equal to 0
+	} while(menu!=0);
+
+	return 0;
 }
-

@@ -7,12 +7,16 @@ void matrix_sum()
 
 	printf("Enter the number of rows of matrix 1:");
 	scanf("%d",&n1);
+	getchar();
 	printf("Enter the number of columns of matrix :");
 	scanf("%d",&m1);
+	getchar();
 	printf("Enter the number of rows of matrix 2:");
 	scanf("%d",&n2);
+	getchar();
 	printf("Enter the number of columns of matrix 2:");
 	scanf("%d",&m2);
+	getchar();
 	
 	if(n1==n2&&m1==m2){
 
@@ -59,13 +63,17 @@ void matrix_product()
 
 	printf("Enter the number of rows of matrix 1:");
 	scanf("%d",&n1);
+	getchar();
 	printf("Enter the number of columns of matrix :");
 	scanf("%d",&m1);
+	getchar();
 	printf("Enter the number of rows of matrix 2:");
 	scanf("%d",&n2);
+	getchar();
 	printf("Enter the number of columns of matrix 2:");
 	scanf("%d",&m2);
-
+	getchar();
+	
 	float a[n1][m1];
 	float b[n2][m2];
 	float c[n1][m1];
@@ -104,9 +112,11 @@ void matrix_transpose()
 	int i,j,n,m;
 	printf("Enter the number of rows:");
 	scanf("%d",&n);
+	getchar();
 	printf("Enter the number of columns:");
 	scanf("%d",&m);
-
+	getchar();
+	
 	float a[n][m];
 
 	for(i=0;i<n;i++){

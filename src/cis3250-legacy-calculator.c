@@ -281,13 +281,7 @@ if(menu==2){
 		spprintf("Cosine of"," ",a,c);
 	}
 
-	/*
-	#
-	#
-	# LUCA BOZZETTO
-	#
-	#
-	*/
+//Last edited by Luca Bozzetto on 10/18 13:30 PM
 
 				// Tangent
 				if ( smenu == 6 ) {

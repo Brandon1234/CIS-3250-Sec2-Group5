@@ -309,7 +309,7 @@ if(menu==2){
 					cosecant = 1 / sin;
 
 					printf("\n");
-					spprintf("Cosec of", " ", userInput, cosec);
+					spprintf("Cosec of", " ", userInput, cosecant);
 				}
 
 				// Secant

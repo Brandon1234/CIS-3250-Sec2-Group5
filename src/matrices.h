@@ -85,19 +85,25 @@ void matrix_product()
 	float a[matrix1Rows][matrix1Cols];
 	float b[matrix2Rows][matrix2Cols];
 	float c[matrix1Rows][matrix1Cols];
+	
+	//gets the values for each row in matrix 1
 	for(i=0;i<matrix1Rows;i++){
 		printf("Enter the members of matrix 1 row %d :",i+1);
 		for(j=0;j<matrix1Cols;j++){
 			scanf("%f",&a[i][j]);
 		}
 	}
+	
+	//gets the values for each row in matrix 2
 	for(i=0;i<matrix2Rows;i++){
 		printf("Enter the members of matrix 2 row %d :",i+1);
 		for(j=0;j<matrix2Cols;j++){
 			scanf("%f",&b[i][j]);
 		}
 	}
+	
 	c[i][j]=1;
+	
 	for(i=0;i<matrix1Rows;i++){
 		for(j=0;j<matrix2Cols;j++){
             c[i][j]=0;
@@ -106,7 +112,7 @@ void matrix_product()
     }
 
 
-    printf("The  of the matrix is\n:");
+    printf("The product of the matrix is\n:");
     for(j=0;j<matrix1Cols;j++){
         for(i=0;i<matrix2Rows;i++){
             printf("\t\t %.0f",a[i][j]);

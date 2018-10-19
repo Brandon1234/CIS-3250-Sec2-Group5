@@ -3,55 +3,55 @@
 void matrix_sum()
 {
 
-	int i,j,matrixRows1,matrixCols1,matrixRows2,matrixCols2;
+	int i,j,matrix1Rows,matrix1Cols,matrix2Rows,matrix2Cols;
 
 	printf("Enter the number of rows of matrix 1:");
-	scanf("%d",&matrixRows1);
+	scanf("%d",&matrix1Rows);
 	getchar();
 	printf("Enter the number of columns of matrix :");
-	scanf("%d",&matrixCols1);
+	scanf("%d",&matrix1Cols);
 	getchar();
 	printf("Enter the number of rows of matrix 2:");
-	scanf("%d",&matrixRows2);
+	scanf("%d",&matrix2Rows);
 	getchar();
 	printf("Enter the number of columns of matrix 2:");
-	scanf("%d",&matrixCols2);
+	scanf("%d",&matrix2Cols);
 	getchar();
 	
 	//if both matrices have the same number of rows and columns
-	if(matrixRows1==matrixRows2&&matrixCols1==matrixCols2){
+	if(matrix1Rows==matrix2Rows&&matrix1Cols==matrix2Cols){
 
-		float a[matrixRows1][matrixCols1];
-		float b[matrixRows2][matrixCols2];
-		float c[matrixRows1][matrixCols1];
+		float a[matrix1Rows][matrix1Cols];
+		float b[matrix2Rows][matrix2Cols];
+		float c[matrix1Rows][matrix1Cols];
 
 		//gets the values for each row of matrix 1
-		for(i=0;i<matrixRows1;i++){
+		for(i=0;i<matrix1Rows;i++){
 			printf("Enter the members of matrix 1 row %d :",i+1);
-			for(j=0;j<matrixCols1;j++){
+			for(j=0;j<matrix1Cols;j++){
 				scanf("%f",&a[i][j]);
 			}
 		}
 		
 		//gets the values for each row of matrix 2 
-		for(i=0;i<matrixRows2;i++){
+		for(i=0;i<matrix2Rows;i++){
 			printf("Enter the members of matrix 2 row %d :",i+1);
-			for(j=0;j<matrixCols2;j++){
+			for(j=0;j<matrix2Cols;j++){
 				scanf("%f",&b[i][j]);
 			}
 		}
 		
 		//using matrix addition, adds each row and column value together to get a new matrix
-		for(i=0;i<matrixRows1;i++){
-			for(j=0;j<matrixCols1;j++){
+		for(i=0;i<matrix1Rows;i++){
+			for(j=0;j<matrix1Cols;j++){
 				c[i][j]=a[i][j]+b[i][j];
 			}
 		}
 		
 		//outputs the new matrix as a table
 		printf("The sum of both matrices is\n:");
-        for(j=0;j<matrixCols1;j++){
-            for(i=0;i<matrixRows1;i++){
+        for(j=0;j<matrix1Cols;j++){
+            for(i=0;i<matrix1Rows;i++){
                 printf("\t\t %.0f",c[i][j]);
 			}
             printf("\n");
@@ -66,40 +66,40 @@ void matrix_sum()
 void matrix_product()
 {
 
-	int i,j,matrixRows1,matrixCols1,matrixRows2,matrixCols2;
+	int i,j,matrix1Rows,matrix1Cols,matrix2Rows,matrix2Cols;
 	
 	//gets the users input
 	printf("Enter the number of rows of matrix 1:");
-	scanf("%d",&matrixRows1);
+	scanf("%d",&matrix1Rows);
 	getchar();
 	printf("Enter the number of columns of matrix :");
-	scanf("%d",&matrixCols1);
+	scanf("%d",&matrix1Cols);
 	getchar();
 	printf("Enter the number of rows of matrix 2:");
-	scanf("%d",&matrixRows2);
+	scanf("%d",&matrix2Rows);
 	getchar();
 	printf("Enter the number of columns of matrix 2:");
-	scanf("%d",&matrixCols2);
+	scanf("%d",&matrix2Cols);
 	getchar();
 	
-	float a[matrixRows1][matrixCols1];
-	float b[matrixRows2][matrixCols2];
-	float c[matrixRows1][matrixCols1];
-	for(i=0;i<matrixRows1;i++){
+	float a[matrix1Rows][matrix1Cols];
+	float b[matrix2Rows][matrix2Cols];
+	float c[matrix1Rows][matrix1Cols];
+	for(i=0;i<matrix1Rows;i++){
 		printf("Enter the members of matrix 1 row %d :",i+1);
-		for(j=0;j<matrixCols1;j++){
+		for(j=0;j<matrix1Cols;j++){
 			scanf("%f",&a[i][j]);
 		}
 	}
-	for(i=0;i<matrixRows2;i++){
+	for(i=0;i<matrix2Rows;i++){
 		printf("Enter the members of matrix 2 row %d :",i+1);
-		for(j=0;j<matrixCols2;j++){
+		for(j=0;j<matrix2Cols;j++){
 			scanf("%f",&b[i][j]);
 		}
 	}
 	c[i][j]=1;
-	for(i=0;i<matrixRows1;i++){
-		for(j=0;j<matrixCols2;j++){
+	for(i=0;i<matrix1Rows;i++){
+		for(j=0;j<matrix2Cols;j++){
             c[i][j]=0;
             c[i][j]+=a[i][j]*b[i][j];
         }
@@ -107,8 +107,8 @@ void matrix_product()
 
 
     printf("The  of the matrix is\n:");
-    for(j=0;j<matrixCols1;j++){
-        for(i=0;i<matrixRows2;i++){
+    for(j=0;j<matrix1Cols;j++){
+        for(i=0;i<matrix2Rows;i++){
             printf("\t\t %.0f",a[i][j]);
 		}
         printf("\n");

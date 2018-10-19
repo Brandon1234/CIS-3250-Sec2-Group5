@@ -27,7 +27,7 @@ void matrix_sum()
 
 		//gets the values for each row of matrix 1
 		for(i=0;i<matrix1Rows;i++){
-			printf("Enter the members of matrix 1 row %d :",i+1);
+			printf("Enter the members of matrix 1 column %d :",i+1);
 			for(j=0;j<matrix1Cols;j++){
 				scanf("%f",&a[i][j]);
 			}
@@ -35,7 +35,7 @@ void matrix_sum()
 		
 		//gets the values for each row of matrix 2 
 		for(i=0;i<matrix2Rows;i++){
-			printf("Enter the members of matrix 2 row %d :",i+1);
+			printf("Enter the members of matrix 2 column %d :",i+1);
 			for(j=0;j<matrix2Cols;j++){
 				scanf("%f",&b[i][j]);
 			}
@@ -88,7 +88,7 @@ void matrix_product()
 	
 	//gets the values for each row in matrix 1
 	for(i=0;i<matrix1Rows;i++){
-		printf("Enter the members of matrix 1 row %d :",i+1);
+		printf("Enter the members of matrix 1 column %d :",i+1);
 		for(j=0;j<matrix1Cols;j++){
 			scanf("%f",&a[i][j]);
 		}
@@ -96,7 +96,7 @@ void matrix_product()
 	
 	//gets the values for each row in matrix 2
 	for(i=0;i<matrix2Rows;i++){
-		printf("Enter the members of matrix 2 row %d :",i+1);
+		printf("Enter the members of matrix 2 column %d :",i+1);
 		for(j=0;j<matrix2Cols;j++){
 			scanf("%f",&b[i][j]);
 		}
@@ -134,7 +134,7 @@ void matrix_transpose()
 	float a[rows][cols];
 
 	for(i=0;i<rows;i++){
-		printf("Enter the members of row %d :",i+1);
+		printf("Enter the members of column %d :",i+1);
 		for(j=0;j<cols;j++){
 			scanf("%f",&a[i][j]);
 		}

@@ -96,149 +96,149 @@ void time()
 
         		}
 
-         	       if( to == 5 ) {
+         	    if( to == 5 ) {
 
-	            	       t2 = t1 / ( 3600 * 24 * 7);
+					t2 = t1 / ( 3600 * 24 * 7);
 
-          	    	       if( t2 <= 1 && t2 >= 0) {
+          	    	if( t2 <= 1 && t2 >= 0) {
 
- 			               printf("\n\n\n\t\t%f seconds = %f week", t1, t2);
+						printf("\n\n\n\t\t%f seconds = %f week", t1, t2);
 
-            		       } else if( t1 == 1) {
+					} else if( t1 == 1) {
 
-         			       printf("\n\n\n\t\t1 second = %f week", t2);
+						printf("\n\n\n\t\t1 second = %f week", t2);
             		       
-			       } else {
+			        } else {
 
- 			               printf("\n\n\n\t\t%f seconds = %f weeks", t1, t2);
+						printf("\n\n\n\t\t%f seconds = %f weeks", t1, t2);
             		       
-	   		       }
+	   		        }
 
-        	      }
+        	    }
 
-         	      if( to == 6 ) {
+         	    if( to == 6 ) {
 
  		           t2 = t1 / ( 3600 * 24 * 30);
 
  		           if( t2 <= 1 && t2 >= 0 ) {
 
-		                       printf("\n\n\n\t\t%f seconds = %f month", t1, t2);
+		              printf("\n\n\n\t\t%f seconds = %f month", t1, t2);
 	
  		           } else if( t1 == 1 ) {
 
- 			               printf("\n\n\n\t\t1 second = %f month", t2);
+ 			            printf("\n\n\n\t\t1 second = %f month", t2);
 
-            		   } else {
+					} else {
 	
-        		               printf("\n\n\n\t\t%f seconds = %f months",t1,t2);
+						printf("\n\n\n\t\t%f seconds = %f months",t1,t2);
             		   
-			   }
+					}
 
         	    }
 
           	    if( to == 7 ) {
 
- 	            	   t2 = t1 / ( 3600 * 24 * 365.25 );
+					t2 = t1 / ( 3600 * 24 * 365.25 );
 
-                   	   if( t2 <= 1 && t2 >= 0 ) {
+                   	if( t2 <= 1 && t2 >= 0 ) {
 
-		                printf("\n\n\n\t\t%f seconds = %f year ", t1, t2 );
+						printf("\n\n\n\t\t%f seconds = %f year ", t1, t2 );
 
-      		           } else if( t1 == 1 ) {
+      		        } else if( t1 == 1 ) {
 
- 		                printf("\n\n\n\t\t1 second = %f year", t2 );
+						printf("\n\n\n\t\t1 second = %f year", t2 );
 
-    		           } else {
+					} else {
 
 		                printf("\n\n\n\t\t%f seconds = %f years", t1, t2);
             		   
-			   }	
+						}	
 
-      		   }
+				}
 
-       		   if( to == 8 ) {
+				if( to == 8 ) {
 
- 		          t2 = t1 / ( 3600 * 24 * 365.25 * 10 );
+					t2 = t1 / ( 3600 * 24 * 365.25 * 10 );
 
-  		          if( t2 <= 1 && t2 >= 0 ) {
+					if( t2 <= 1 && t2 >= 0 ) {
 
-                		printf("\n\n\n\t\t%f seconds = %f decade", t1, t2);
+						printf("\n\n\n\t\t%f seconds = %f decade", t1, t2);
             
-			  } else if( t1 == 1 ) {
+					} else if( t1 == 1 ) {
 
 		                printf("\n\n\n\t\t1 second = %f decade", t2);
 
-            		  } else {
+            		} else {
 
-                		printf("\n\n\n\t\t%f seconds = %f decades", t1, t2);
+						printf("\n\n\n\t\t%f seconds = %f decades", t1, t2);
             
-					  }
+					}//else
 
-        	  }
+				}//(if to == 8)
 		  
 		  	
-		   if( to==9 ) {
+				if( to==9 ) {
 
-			  t2 = t1/ ( 3600 * 24 * 365.25 * 100 );
+					t2 = t1/ ( 3600 * 24 * 365.25 * 100 );
 
-			  if( t2 <= 1 && t2 >= 0 ) {
+					if( t2 <= 1 && t2 >= 0 ) {
 
-				printf("\n\n\n\t\t%f seconds = %f century", t1, t2);
+						printf("\n\n\n\t\t%f seconds = %f century", t1, t2);
 
-			  } else if( t1==1 ) {
+					} else if( t1==1 ) {
 
-				printf("\n\n\n\t\t1 second = %f century", t2);
+						printf("\n\n\n\t\t1 second = %f century", t2);
 
-			  } else {
+					} else {
 
-				printf("\n\n\n\t\t%f seconds = %f centuries", t1, t2);
+						printf("\n\n\n\t\t%f seconds = %f centuries", t1, t2);
 
-	        	  }
+	        	    }
 
-		    }//if( to==9 );
+				}//if( to==9 );
 
-		     if( to==10 ) {
+				if( to==10 ) {
 
-			  t2 = t1 / (3600 * 24 * 365.25 * 1000 );
+					t2 = t1 / (3600 * 24 * 365.25 * 1000 );
 
-			  if( t2 <= 1 && t2 >= 0 ) {
+					if( t2 <= 1 && t2 >= 0 ) {
 
-				printf("\n\n\n\t\t%f seconds = %f millenium", t1, t2);
+						printf("\n\n\n\t\t%f seconds = %f millenium", t1, t2);
 
-			  } else if( t1==1 ) {
+					} else if( t1==1 ) {
 
-				printf("\n\n\n\t\t1 second = %f millenium", t2);
+						printf("\n\n\n\t\t1 second = %f millenium", t2);
 
-			  } else {
+					} else {
 
-				printf("\n\n\n\t\t%f seconds = %f milleniums", t1, t2);
+						printf("\n\n\n\t\t%f seconds = %f milleniums", t1, t2);
 
-			  } //else
+					} //else
 
-		    }//if( to==10 );
+				}//if( to==10 );
 
-		     if( to==12 ) {
+				if( to==12 ) {
 
-			  t2 = t1 / (3600 * 24 * 365.25 * 30 );
+					t2 = t1 / (3600 * 24 * 365.25 * 30 );
 
-			  if( t2 <= 1 && t2 >= 0 ) {
+					if( t2 <= 1 && t2 >= 0 ) {
 
-				printf("%f seconds = %f Generation", t1, t2);
+						printf("%f seconds = %f Generation", t1, t2);
 
-			  } else if(t1==1) {
+					} else if(t1==1) {
 
-				printf("1 second = %f Generation", t2);
+						printf("1 second = %f Generation", t2);
 
-			  } else {
+					} else {
 
-				printf("%f seconds = %f Generations", t1, t2);
+						printf("%f seconds = %f Generations", t1, t2);
 
-			  }
+					}
 
-		      }//if(to==12);
+				}//if(to==12);
 
         
-		}//if(from == 1)
+			}//if(from == 1)
 	
 	}//else { 
 	

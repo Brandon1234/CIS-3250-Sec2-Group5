@@ -9,69 +9,78 @@
 
 FILE*help;
 
-
+//Last edited by Abdalaziz Elshamli, 10/6 at 6PM
 float input(char*inname)
 {
 	float key;
 	char temp[9999];
 	
 	do{
-	printf("%s",inname);
-	 if(!scanf("%f",&key)){
-		scanf("%s",&temp);//recieve temp
-	      	printf("Please try again!\n");
+		printf("%s",inname);
+		if(!scanf("%f",&key)){
+			scanf("%s",&temp);//recieve temp
+			printf("Please try again!\n");
+			} else {
+			return key;
+			}
 	}
-	else{
-		return key;
-	}
-	}while(1);	 
+	
+	while(1);	 
 }
-
+//Last edited by Abdalaziz Elshamli, 10/6 6PM
 float inputAry(char*inname,int num)
 {
 	float key;
 	char temp[9999];
 
 	do{
-	printf("%s[%d]: ",inname,num+1);
-	 if(!scanf("%f",&key)){
-		scanf("%s",&temp);
-	      	printf("Please try again!\n");
-	}
-	else{
+		printf("%s[%d]: ",inname,num+1);
+		if(!scanf("%f",&key)){
+			scanf("%s",&temp);
+			printf("Please try again!\n");
+		} else {
 		return key;
-	}
+		}
 	}while(1);	 
 }
 
+//Last edited by Abdalaziz Elshamli, 10/6 6PM
 float plus(float adder,float addin)
 {
 	float result;
+	
 	result=adder+addin;
 	return result;
 }
 
+//Last edited by Abdalaziz Elshamli, 10/6 6PM
 float minus(float miner,float minin)
 {
 	float result;
+	
 	result=miner-minin;
 	return result;
 }
 
+//Last edited by Abdalaziz Elshamli, 10/6 6PM
 float mult(float multer,float multin)
 {
 	float result;
+	
 	result=multer*multin;
 	return result;
 }
 
+//Last edited by Abdalaziz Elshamli, 10/6 6PM
 float divind(float divider,float dividin)
 {
 	float result;
+	
 	result=divider/dividin;
 	return result;
 }
 
+//Last edited by Abdalaziz Elshamli, 10/6 6PM
 int factorial(int term)
 {
 
@@ -82,6 +91,7 @@ int factorial(int term)
 	return term*factorial(term-1);
 }
 
+//Last edited by Abdalaziz Elshamli, 10/6 6PM
 int fib(int term)
 {
 	if(term==1){
@@ -93,56 +103,45 @@ int fib(int term)
 	return fib(term-1)+fib(term-2);
 }
 
+//Last edited by Abdalaziz Elshamli, 10/6 6PM
 float power(float base,int pow)
 {
 	int i;
 	float mem=1;
+	
 	for(i=0;i<pow;i++){
 		mem*=base;
 	}
 	return mem;
 }
 
+//Last edited by Abdalaziz Elshamli, 10/6 6PM
 float sine(float radius)
 {
 	float val,sin;
-		val=radius*(PI/180);
-		sin=val-(power(val,3)/factorial(3))+(power(val,5)/factorial(5))-(power(val,7)/factorial(7));
+	
+	val=radius*(PI/180);
+	sin=val-(power(val,3)/factorial(3))+(power(val,5)/factorial(5))-(power(val,7)/factorial(7));
 	return sin;
 }
 
+//Last edited by Abdalaziz Elshamli, 10/6 6PM
 float cosine(float radius)
 {
 	float val,cos;
-		val=radius*(PI/180);
-		cos=1-(power(val,2)/factorial(2))+(power(val,4)/factorial(4))-(power(val,6)/factorial(6));
+	
+	val=radius*(PI/180);
+	cos=1-(power(val,2)/factorial(2))+(power(val,4)/factorial(4))-(power(val,6)/factorial(6));
 	return cos;
 }
 
+//Last edited by Abdalaziz Elshamli, 10/6 6PM
 int spprint(char*screen,char*sym,int ini,int res)
 {
 	printf("%s %d%s = %d\n",screen,ini,sym,res);
 	
-return 0;
+	return 0;
 }
-
-float spprintf(char*screen,char*sym,float ini,float res)
-{
-	printf("%s %.4f%s = %.4f\n",screen,ini,sym,res);
-
-return 0;
-}
-
-float print(char*screen,char*sym,float ini,float upt,float res)
-{
-	printf("%s %.4f %s %.4f = %.4f\n",screen,ini,sym,upt,res);
-
-return 0;
-}
-float Aryprint(char*screen,float ans)
-{
-	printf("%s : %.4f\n",screen,ans);
-
 return 0;
 }
 

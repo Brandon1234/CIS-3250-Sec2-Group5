@@ -2,6 +2,7 @@
 
 //Edited by Brandon 2018-10-19
 
+//adds together 2 matricies
 void matrix_sum()
 {
 
@@ -64,7 +65,7 @@ void matrix_sum()
     }
 }
 
-
+//multiplies 2 matrices
 void matrix_product()
 {
 
@@ -123,6 +124,7 @@ void matrix_product()
 	}
 }
 
+//flips a matrix over it's diagonal axis (top left to bottom right)
 void matrix_transpose()
 {
 	int i,j,rows,cols;

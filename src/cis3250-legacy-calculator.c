@@ -19,7 +19,7 @@ float input(char*inname)
 	printf("%s",inname);
 	 if(!scanf("%f",&key)){
 		scanf("%s",&temp);//recieve temp
-	      	printf("Please try again!\n");
+			printf("Please try again!\n");
 	}
 	else{
 		return key;
@@ -36,7 +36,7 @@ float inputAry(char*inname,int num)
 	printf("%s[%d]: ",inname,num+1);
 	 if(!scanf("%f",&key)){
 		scanf("%s",&temp);
-	      	printf("Please try again!\n");
+			printf("Please try again!\n");
 	}
 	else{
 		return key;
@@ -323,28 +323,28 @@ if(menu==2){
 
 	if(smenu==10){
 		int operation_number=0;
-		       printf("\n\t\tSum of Matrices(1)\t\tTranspose(2)\t\tProduct of Matrices(3)");
-       printf("\n\tEnter an operation command:");
-       scanf("%d",&operation_number);
+			   printf("\n\t\tSum of Matrices(1)\t\tTranspose(2)\t\tProduct of Matrices(3)");
+	   printf("\n\tEnter an operation command:");
+	   scanf("%d",&operation_number);
 
-      switch(operation_number){
-       case 1: matrix_sum();break;
-       case 2: matrix_transpose();break;
-       case 3: matrix_product();break;
-       }
+	  switch(operation_number){
+	   case 1: matrix_sum();break;
+	   case 2: matrix_transpose();break;
+	   case 3: matrix_product();break;
+	   }
 	}
 
 	if(smenu==11){
 		int operation_number=0;
-		        printf("\n\n\n\t\tTemperature(1)\t\tTime(2)");
-        printf("\n\n\n\t\tPlease choose an operation number:");
-        scanf("%d",&operation_number);
+				printf("\n\n\n\t\tTemperature(1)\t\tTime(2)");
+		printf("\n\n\n\t\tPlease choose an operation number:");
+		scanf("%d",&operation_number);
 
-        switch(operation_number){
-            case 1: temp();break;
-            case 2: time();break;
-        }
-        break;
+		switch(operation_number){
+			case 1: temp();break;
+			case 2: time();break;
+		}
+		break;
 
 	}
 
@@ -379,14 +379,14 @@ if(menu==3){
 	}
 
 	 for(i=0;i<n;i++){
-	 	 for(j=0;j<=i;j++){
-     			 if(set[j]>set[i]){
+		 for(j=0;j<=i;j++){
+				 if(set[j]>set[i]){
 				rest=set[j];
 				set[j]=set[i];
 				set[i]=rest;
- 			 }
-  		}
-  	}
+			 }
+		}
+	}
 
 min = set[0];
 max = set[n-1];
@@ -415,19 +415,14 @@ for(i=0;i<n;i++){
 	}
 }
 
-	/*
-	#
-	#
-	# RYAN
-	#
-	#
-	*/
+	
+	// Last edited by Ryan Paul on Fri Otc 19 2:12 PM
 
 			temp = numtemp[0];
 
-			for(i=1;i<n;i++) {
+			for(i=1; i<n; i++) {
 
-				if(numtemp[i]>temp) {
+				if(numtemp[i] >temp) {
 
 					temp = numtemp[i];
 
@@ -436,29 +431,29 @@ for(i=0;i<n;i++){
 			}
 
 			//Always False If
-			if(i==999) {
+			if (i == 999) {
 
 				//Warp form menu
 				warp1:
 
 				j=0;
 
-				for(i=0;i<n;i++) {
+				for(i=0; i<n; i++) {
 
-						if(numtemp[i]==temp) {
+						if(numtemp[i] == temp) {
 
-								j++;
+							j++;
 
 						}
 				}
 
-				if(j==1) {
+				if(j == 1) {
 
-					for(i=0;i<n;i++) {
+					for(i=0; i<n; i++) {
 
-						if(numtemp[i]==temp) {
+						if(numtemp[i] == temp) {
 
-								printf("%.4f\n",set[i]);
+							printf("%.4f\n",set[i]);
 
 						}
 
@@ -496,7 +491,7 @@ for(i=0;i<n;i++){
 				system("clear");
 
 				//handle choice
-				if(amenu==1) {
+				if(amenu == 1) {
 
 					//prints max value to user
 					printf("\n");
@@ -504,7 +499,7 @@ for(i=0;i<n;i++){
 
 				}
 
-				if(amenu==2) {
+				if(amenu == 2) {
 
 					//prints min value to user
 					printf("\n");
@@ -512,7 +507,7 @@ for(i=0;i<n;i++){
 
 				}
 
-				if(amenu==3) {
+				if(amenu == 3) {
 
 					//prints x-bar to user
 					printf("\n");
@@ -520,7 +515,7 @@ for(i=0;i<n;i++){
 
 				}
 
-				if(amenu==4) {
+				if(amenu == 4) {
 
 					//prints range to user
 					printf("\n");
@@ -528,7 +523,7 @@ for(i=0;i<n;i++){
 
 				}
 
-				if(amenu==5) {
+				if(amenu == 5) {
 
 					//prints median to user
 					printf("\n");
@@ -536,7 +531,7 @@ for(i=0;i<n;i++){
 
 				}
 
-				if(amenu==6) {
+				if(amenu == 6) {
 
 					//prints mode to user
 					printf("\n");
@@ -545,13 +540,13 @@ for(i=0;i<n;i++){
 
 				}
 
-				if(amenu==7) {
+				if(amenu == 7) {
 
 					//prints out sorted values
 					printf("\n");
 					printf("Set of number is(sort): ");
 
-					for(i=0;i<n;i++) {
+					for(i=0; i<n; i++) {
 
 						printf("%.3f ",set[i]);
 
@@ -559,7 +554,7 @@ for(i=0;i<n;i++){
 
 				}
 
-				if(amenu==8) {
+				if(amenu == 8) {
 
 					//goes to initial warp and prompts for values
 					goto warp;
@@ -567,19 +562,18 @@ for(i=0;i<n;i++){
 				}
 
 			// Continue while amenu is not equal to 0
-			} while(amenu!=0);
+			} while(amenu != 0);
 
 		}
 
-
-		if(menu==4) {
+		if(menu == 4) {
 
 			char text;
-			
+
 			//prints out help guidelines
 			help = fopen("User_helping.txt","r");
 
-			while((text=fgetc(help))!=EOF) {
+			while((text = fgetc(help)) != EOF) {
 
 				fprintf(stdout,"%c",text);
 
@@ -590,7 +584,7 @@ for(i=0;i<n;i++){
 		}
 
 	// Continue while menu is not equal to 0
-	} while(menu!=0);
+	} while(menu != 0);
 
 	return 0;
 }

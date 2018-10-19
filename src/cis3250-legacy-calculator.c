@@ -142,9 +142,6 @@ int spprint(char*screen,char*sym,int ini,int res)
 	
 	return 0;
 }
-return 0;
-}
-
 	/*
 	#
 	#

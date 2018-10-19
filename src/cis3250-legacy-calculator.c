@@ -384,139 +384,186 @@ int main(int argc, char* argv[]) {
                     
                 }
 
-	/*
-	#
-	#
-	# LUCA BOZZETTO
-	#
-	#
-	*/
+//Last edited by Luca Bozzetto on 10/18 13:30 PM
 
-	if(smenu==6){
-		a=input("Enter your value: ");
-		r1=sine(a);
-		r2=cosine(a);
-		c=r1/r2;
-		printf("\n");
-		spprintf("Tangent of"," ",a,c);
-	}
+				// Tangent
+				if ( smenu == 6 ) {
+					float userInput, sin, cos, tangent;
 
-	if(smenu==7){
-		a=input("Enter your value: ");
-		c=sine(a);
-		printf("\n");
-		spprintf("Cosec of"," ",a,1/c);
-	}
+					userInput = input("Enter your value: ");
 
-	if(smenu==5){
-		a=input("Enter your value: ");
-		c=cosine(a);
-		printf("\n");
-		spprintf("Sec of"," ",a,1/c);
-	}
+					// Tanger is defined as sin / cos
+					sin = sine(userInput);
+					cos = cosine(userInput);
+					tangent = sin / cos;
 
-	if(smenu==8){
-		a=input("Enter your value: ");
-		r1=sine(a);
-		r2=cosine(a);
-		c=r1/r2;
-		printf("\n");
-		spprintf("Cot of"," ",a,1/c);
-	}
+					printf("\n");
+					spprintf("Tangent of", " ", userInput, tangent);
+				}
 
-	if(smenu==10){
-		int operation_number=0;
-		       printf("\n\t\tSum of Matrices(1)\t\tTranspose(2)\t\tProduct of Matrices(3)");
-       printf("\n\tEnter an operation command:");
-       scanf("%d",&operation_number);
+				// Cosecant
+				if ( smenu == 7 ) {
+					float userInput, sin, cosecant;
 
-      switch(operation_number){
-       case 1: matrix_sum();break;
-       case 2: matrix_transpose();break;
-       case 3: matrix_product();break;
-       }
-	}
+					userInput = input("Enter your value: ");
 
-	if(smenu==11){
-		int operation_number=0;
-		        printf("\n\n\n\t\tTemperature(1)\t\tTime(2)");
-        printf("\n\n\n\t\tPlease choose an operation number:");
-        scanf("%d",&operation_number);
+					// Cosecant is defined as 1 / sin
+					sin = sine(userInput);
+					cosecant = 1 / sin;
 
-        switch(operation_number){
-            case 1: temp();break;
-            case 2: time();break;
-        }
-        break;
+					printf("\n");
+					spprintf("Cosec of", " ", userInput, cosecant);
+				}
 
-	}
+				// Secant
+				if ( smenu == 8 ) {
+					float userInput, cos, secant;
+
+					userInput = input("Enter your value: ");
+
+					// Secant is defined as 1 / cos
+					cos = cosine(userInput);
+					secant = 1 / cos;
+
+					printf("\n");
+					spprintf("Sec of", " ", userInput, secant);
+				}
+
+				// Cotangent
+				if ( smenu == 9 ) {
+					float userInput, sin, cos, tangent, cotangent;
+
+					userInput = input("Enter your value: ");
+
+					// Cotangent is defined as 1 / tangent
+					sin = sine(userInput);
+					cos = cosine(userInput);
+					tangent = cos/sin;
+					cotangent = 1/tangent;
+
+					printf("\n");
+					spprintf("Cot of", " ", userInput, cotangent);
+				}
+
+				// Matrix functions
+				if ( smenu == 10 ) {
+					int operationNumber = 0;
+
+					printf("\n\t\tSum of Matrices(1)\t\tTranspose(2)\t\tProduct of Matrices(3)");
+					printf("\n\tEnter an operation command:");
+					scanf("%d", &operationNumber);
+
+					switch ( operationNumber ) {
+						case 1: matrix_sum();
+								break;
+						case 2: matrix_transpose();
+								break;
+						case 3: matrix_product();
+								break;
+					}
+				}
+
+				// Conversion functions
+				if ( smenu == 11 ) {
+					int operationNumber = 0;
+					
+					printf("\n\n\n\t\tTemperature(1)\t\tTime(2)");
+					printf("\n\n\n\t\tPlease choose an operation number:");
+					scanf("%d", &operationNumber);
+
+					switch(operationNumber) {
+						case 1: temp(); //
+								break;
+						case 2: time();
+								break;
+					}
+
+					break;
+				}
+
+			} while ( smenu != 0 );
+		}
 
 
+		// Accountant Calculator
+		if ( menu == 3 ) {
 
-}while(smenu!=0);
-}
+			accountantInsertValues:
 
-if(menu==3){
+				printf("\n===========================\n");
+				printf("Accountant Calculator Menu\n");
+				printf("===========================\n");
+				printf("Please set value first\n");
+				printf("\n");
 
-	warp:
+				int numberOfTerm, temp, i, j, amenu;
+				float swap, max, min, average, sum;
+				float median;
 
-		//system("clear");
-		printf("\n===========================\n");
-		printf("Accountant Calculator Menu\n");
-		printf("===========================\n");
-		printf("Please set value first\n");
-		printf("\n");
+				average = 0;
+				sum = 0;
 
-	int n,i,j,amenu;
-	float rest,max,min,x_bar=0,sum=0;
-	float med,mod,count;
-	int temp;
+				// The user defines how many values we have to read
+				numberOfTerm = input("Enter number of term: ");
 
-		n=input("Enter number of term: ");
+				float termsArray[numberOfTerm];
+				int temporaryArray[numberOfTerm];
 
-	float set[n];
-	int numtemp[n];
+				// Get all user values
+				for ( i = 0; i < numberOfTerm; i++ ) {
+					termsArray[i] = inputAry("Enter value terms", i);
+				}
 
-	 for(i=0;i<n;i++){
-		set[i]=inputAry("Enter value terms",i);
-	}
+				// Reorder the array from smallest element to greatest
+				for ( i = 0; i < numberOfTerm; i++ ) {
+					for ( j = 0; j <= i; j++ ) {
+						if ( termsArray[j] > termsArray[i] ) {
+							swap = termsArray[j];
+							termsArray[j] = termsArray[i];
+							termsArray[i] = swap;
+						}
+					}
+				}
 
-	 for(i=0;i<n;i++){
-	 	 for(j=0;j<=i;j++){
-     			 if(set[j]>set[i]){
-				rest=set[j];
-				set[j]=set[i];
-				set[i]=rest;
- 			 }
-  		}
-  	}
+				min = termsArray[0];
+				max = termsArray[numberOfTerm-1];
 
-min = set[0];
-max = set[n-1];
+				// Compute the total sum of the array
+				for ( i = 0; i < numberOfTerm; i++ ) {
+					sum += termsArray[i];
+				}
 
-for(i=0;i<n;i++){
-	sum+=set[i];
-}
-x_bar=(sum/n);
+				// The average value of the array 
+				average = sum / numberOfTerm;
 
-if((n%2)!=0){
-	med=set[((n+1)/2)-1];
-}
-else{
-	med=(set[((n+1)/2)]+set[((n+1)/2)-1])/2;
-}
+				/***
+				 * The median value is the "middle" of a sorted list of numbers
+				 * If there is an even number of terms, the median is then the mean
+				 * of the two middle values.
+				***/
+				if ( ( numberOfTerm % 2 ) != 0 ) {
+					median = termsArray[((numberOfTerm + 1) / 2) - 1];
+				}
+				else {
+					median = ( termsArray[ ( ( numberOfTerm + 1) / 2 ) ] 
+						+ termsArray[ ( ( numberOfTerm + 1 ) / 2 ) - 1 ] ) / 2;
+				}
 
-for(i=0;i<n;i++){
-	numtemp[i]=0;
-}
-for(i=0;i<n;i++){
-	temp=set[i];
-	for(j=i;j<n;j++){
-	if(set[j]==temp){
-		numtemp[i]++;
-	}
-	}
-}
+				// Initialize temporaryArray to 0
+				memset(temporaryArray, 0, numberOfTerm);
+				// for(i = 0; i < numberOfTerm; i++) {
+				// 	temporaryArray[i] = 0;
+				// }
+
+
+				for ( i = 0; i < numberOfTerm; i++ ) {
+					temp = termsArray[i];
+					for ( j = i; j < numberOfTerm; j++ ) {
+						if ( termsArray[j] == temp ) {
+							temporaryArray[i]++;
+						}
+					}
+				}
 
 	/*
 	#

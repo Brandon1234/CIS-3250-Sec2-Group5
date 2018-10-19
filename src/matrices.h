@@ -3,48 +3,55 @@
 void matrix_sum()
 {
 
-	int i,j,n1,m1,n2,m2;
+	int i,j,matrixRows1,matrixCols1,matrixRows2,matrixCols2;
 
 	printf("Enter the number of rows of matrix 1:");
-	scanf("%d",&n1);
+	scanf("%d",&matrixRows1);
 	getchar();
 	printf("Enter the number of columns of matrix :");
-	scanf("%d",&m1);
+	scanf("%d",&matrixCols1);
 	getchar();
 	printf("Enter the number of rows of matrix 2:");
-	scanf("%d",&n2);
+	scanf("%d",&matrixRows2);
 	getchar();
 	printf("Enter the number of columns of matrix 2:");
-	scanf("%d",&m2);
+	scanf("%d",&matrixCols2);
 	getchar();
 	
-	if(n1==n2&&m1==m2){
+	//if both matrices have the same number of rows and columns
+	if(matrixRows1==matrixRows2&&matrixCols1==matrixCols2){
 
-		float a[n1][m1];
-		float b[n2][m2];
-		float c[n1][m1];
+		float a[matrixRows1][matrixCols1];
+		float b[matrixRows2][matrixCols2];
+		float c[matrixRows1][matrixCols1];
 
-
-		for(i=0;i<n1;i++){
+		//gets the values for each row of matrix 1
+		for(i=0;i<matrixRows1;i++){
 			printf("Enter the members of matrix 1 row %d :",i+1);
-			for(j=0;j<m1;j++){
+			for(j=0;j<matrixCols1;j++){
 				scanf("%f",&a[i][j]);
 			}
 		}
-		for(i=0;i<n2;i++){
+		
+		//gets the values for each row of matrix 2 
+		for(i=0;i<matrixRows2;i++){
 			printf("Enter the members of matrix 2 row %d :",i+1);
-			for(j=0;j<m2;j++){
+			for(j=0;j<matrixCols2;j++){
 				scanf("%f",&b[i][j]);
 			}
 		}
-		for(i=0;i<n1;i++){
-			for(j=0;j<m1;j++){
+		
+		//using matrix addition, adds each row and column value together to get a new matrix
+		for(i=0;i<matrixRows1;i++){
+			for(j=0;j<matrixCols1;j++){
 				c[i][j]=a[i][j]+b[i][j];
 			}
 		}
+		
+		//outputs the new matrix as a table
 		printf("The sum of both matrices is\n:");
-        for(j=0;j<m1;j++){
-            for(i=0;i<n1;i++){
+        for(j=0;j<matrixCols1;j++){
+            for(i=0;i<matrixRows1;i++){
                 printf("\t\t %.0f",c[i][j]);
 			}
             printf("\n");
@@ -59,39 +66,40 @@ void matrix_sum()
 void matrix_product()
 {
 
-	int i,j,n1,m1,n2,m2,l,k;
-
+	int i,j,matrixRows1,matrixCols1,matrixRows2,matrixCols2;
+	
+	//gets the users input
 	printf("Enter the number of rows of matrix 1:");
-	scanf("%d",&n1);
+	scanf("%d",&matrixRows1);
 	getchar();
 	printf("Enter the number of columns of matrix :");
-	scanf("%d",&m1);
+	scanf("%d",&matrixCols1);
 	getchar();
 	printf("Enter the number of rows of matrix 2:");
-	scanf("%d",&n2);
+	scanf("%d",&matrixRows2);
 	getchar();
 	printf("Enter the number of columns of matrix 2:");
-	scanf("%d",&m2);
+	scanf("%d",&matrixCols2);
 	getchar();
 	
-	float a[n1][m1];
-	float b[n2][m2];
-	float c[n1][m1];
-	for(i=0;i<n1;i++){
+	float a[matrixRows1][matrixCols1];
+	float b[matrixRows2][matrixCols2];
+	float c[matrixRows1][matrixCols1];
+	for(i=0;i<matrixRows1;i++){
 		printf("Enter the members of matrix 1 row %d :",i+1);
-		for(j=0;j<m1;j++){
+		for(j=0;j<matrixCols1;j++){
 			scanf("%f",&a[i][j]);
 		}
 	}
-	for(i=0;i<n2;i++){
+	for(i=0;i<matrixRows2;i++){
 		printf("Enter the members of matrix 2 row %d :",i+1);
-		for(j=0;j<m2;j++){
+		for(j=0;j<matrixCols2;j++){
 			scanf("%f",&b[i][j]);
 		}
 	}
 	c[i][j]=1;
-	for(i=0;i<n1;i++){
-		for(j=0;j<m2;j++){
+	for(i=0;i<matrixRows1;i++){
+		for(j=0;j<matrixCols2;j++){
             c[i][j]=0;
             c[i][j]+=a[i][j]*b[i][j];
         }
@@ -99,8 +107,8 @@ void matrix_product()
 
 
     printf("The  of the matrix is\n:");
-    for(j=0;j<m1;j++){
-        for(i=0;i<n2;i++){
+    for(j=0;j<matrixCols1;j++){
+        for(i=0;i<matrixRows2;i++){
             printf("\t\t %.0f",a[i][j]);
 		}
         printf("\n");
@@ -109,26 +117,26 @@ void matrix_product()
 
 void matrix_transpose()
 {
-	int i,j,n,m;
+	int i,j,rows,cols;
 	printf("Enter the number of rows:");
-	scanf("%d",&n);
+	scanf("%d",&rows);
 	getchar();
 	printf("Enter the number of columns:");
-	scanf("%d",&m);
+	scanf("%d",&cols);
 	getchar();
 	
-	float a[n][m];
+	float a[rows][cols];
 
-	for(i=0;i<n;i++){
+	for(i=0;i<rows;i++){
 		printf("Enter the members of row %d :",i+1);
-		for(j=0;j<m;j++){
+		for(j=0;j<cols;j++){
 			scanf("%f",&a[i][j]);
 		}
 	}
 
 	printf("The transpose of the matrix is\n:");
-	for(j=0;j<m;j++){
-		for(i=0;i<n;i++){		
+	for(j=0;j<cols;j++){
+		for(i=0;i<rows;i++){		
 			printf("\t\t %.0f",a[i][j]);
 		}
 		printf("\n");

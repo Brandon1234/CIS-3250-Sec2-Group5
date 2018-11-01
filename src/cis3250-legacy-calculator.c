@@ -416,13 +416,13 @@ for(i=0;i<n;i++){
 }
 
 	
-	// Last edited by Ryan Paul on Fri Otc 19 2:12 PM
+	// Last edited by Ryan Paul on 11/01 4:24 PM
 
 			temp = numtemp[0];
 
-			for(i=1; i<n; i++) {
+			for(i = 1; i < n; i++) {
 
-				if(numtemp[i] >temp) {
+				if(numtemp[i] > temp) {
 
 					temp = numtemp[i];
 
@@ -433,23 +433,24 @@ for(i=0;i<n;i++){
 			//Always False If
 			if (i == 999) {
 
-				//Warp form menu
+				//Warp from menu
 				warp1:
 
-				j=0;
+				j = 0;
 
-				for(i=0; i<n; i++) {
+				for(i = 0; i < n; i++) {
 
-						if(numtemp[i] == temp) {
+					if(numtemp[i] == temp) {
 
-							j++;
+						j++;
 
-						}
+					}
+
 				}
 
 				if(j == 1) {
 
-					for(i=0; i<n; i++) {
+					for(i = 0; i < n; i++) {
 
 						if(numtemp[i] == temp) {
 
@@ -463,7 +464,7 @@ for(i=0;i<n;i++){
 
 				else {
 
-						printf("Not have mode value\n");
+					printf("Not have mode value\n");
 
 				}
 
@@ -495,7 +496,7 @@ for(i=0;i<n;i++){
 
 					//prints max value to user
 					printf("\n");
-					Aryprint("Max is",max);
+					Aryprint("Max is", max);
 
 				}
 
@@ -503,7 +504,7 @@ for(i=0;i<n;i++){
 
 					//prints min value to user
 					printf("\n");
-					Aryprint("Min is",min);
+					Aryprint("Min is", min);
 
 				}
 
@@ -511,7 +512,7 @@ for(i=0;i<n;i++){
 
 					//prints x-bar to user
 					printf("\n");
-					Aryprint("X-bar is",x_bar);
+					Aryprint("X-bar is", x_bar);
 
 				}
 
@@ -519,7 +520,7 @@ for(i=0;i<n;i++){
 
 					//prints range to user
 					printf("\n");
-					Aryprint("Range is",max-min);
+					Aryprint("Range is", max-min);
 
 				}
 
@@ -527,7 +528,7 @@ for(i=0;i<n;i++){
 
 					//prints median to user
 					printf("\n");
-					Aryprint("Med is",med);
+					Aryprint("Med is", med);
 
 				}
 
@@ -546,9 +547,9 @@ for(i=0;i<n;i++){
 					printf("\n");
 					printf("Set of number is(sort): ");
 
-					for(i=0; i<n; i++) {
+					for(i = 0; i < n; i++) {
 
-						printf("%.3f ",set[i]);
+						printf("%.3f ", set[i]);
 
 					}
 
@@ -571,11 +572,11 @@ for(i=0;i<n;i++){
 			char text;
 
 			//prints out help guidelines
-			help = fopen("User_helping.txt","r");
+			help = fopen("User_helping.txt", "r");
 
 			while((text = fgetc(help)) != EOF) {
 
-				fprintf(stdout,"%c",text);
+				fprintf(stdout,"%c", text);
 
 			}
 

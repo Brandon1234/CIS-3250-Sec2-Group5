@@ -14,9 +14,9 @@ double powerfn(double x, int n)
 	int i;
 	double result = 1;
 
-	for(i = 1; i <= n; i++) {
+	for( i = 1; i <= n; i++ ) {
 
-    		result *= x;
+		result *= x;
 
 	}
 

@@ -177,9 +177,9 @@ void time()
 				}//(if to == 8)
 		  
 		  	
-				if( to==9 ) {
+				if( to == 9 ) {
 
-					t2 = t1/ ( 3600 * 24 * 365.25 * 100 );
+					t2 = t1 / ( 3600 * 24 * 365.25 * 100 );
 
 					if( t2 <= 1 && t2 >= 0 ) {
 
@@ -197,7 +197,7 @@ void time()
 
 				}//if( to==9 );
 
-				if( to==10 ) {
+				if( to == 10 ) {
 
 					t2 = t1 / (3600 * 24 * 365.25 * 1000 );
 
@@ -217,7 +217,7 @@ void time()
 
 				}//if( to==10 );
 
-				if( to==12 ) {
+				if( to == 12 ) {
 
 					t2 = t1 / (3600 * 24 * 365.25 * 30 );
 
@@ -225,7 +225,7 @@ void time()
 
 						printf("%f seconds = %f Generation", t1, t2);
 
-					} else if(t1==1) {
+					} else if( t1 == 1 ) {
 
 						printf("1 second = %f Generation", t2);
 
@@ -249,6 +249,10 @@ void temp() {
 	int from, to;
 	double t1, t2, t3;
 
+	//converts inputted tempurature between celsius, kelvin, and fahrenheit 
+	//based upon the user input
+	//1 for celsius 2 for fahrenheit and 3 for kelvin
+	
 	printf("\n\n\n\t\t\tCelsius(1)\t\t\tFahrenheit(2)\t\t\tKelvin(3)");
 	printf("\n\n\n\t\t\tConvert from(number):");
 	scanf("%d", &from);
@@ -259,18 +263,22 @@ void temp() {
 	printf("\n\n\n\t\t\tEnter temperature:");
 	scanf("%lf", &t1);
 
+	 
+	
 	if( from == to ) {
-	    
+	    //if the user input askes for a conversion from one tempurature measure to the same one
 		printf("\n\n\n\t\t\t The resulting temperature remains the same; %f", t1);
 	
 	} else {
 	
 		switch(from) {
 			
+			//converting from celsius to...
 			case 1:
 			    
 				switch(to) {
 				 
+					//fahrenheit
 					case 2:
 					    			     
 						t2 = t1 * 9 / 5 + 32.0;
@@ -278,7 +286,8 @@ void temp() {
 						printf("\n\n\n\t\t\t%fC=%fF", t1, t2);
 					   
 						break;	    
-				 
+					
+					//kelvin
 					case 3:
 				     
 						t2 = t1 + 273.15;
@@ -291,10 +300,12 @@ void temp() {
 			
 				break;
 				
+			//converting from fahrenheit to...	
 			case 2:
 			    
 				switch(to) {
-				
+					
+					//celsius
 					case 1:
 				    
 						t2 = ( t1 - 32.0 ) * 5 / 9;
@@ -303,6 +314,7 @@ void temp() {
 				   
 						break;
 				
+					//kelvin
 					case 3:
 				   
 						t1 = ( t1 - 32.0 ) * 5 / 9;
@@ -315,13 +327,14 @@ void temp() {
 
 			    
 			    
-				}
+				}//switch(to);
 				
-			
+			//converting from kelvin to...
 			case 3:
 			    
 				switch(to) {
 				
+					//celsius
 					case 1:
 				    
 						t2 = t1 - 273.15;
@@ -330,6 +343,7 @@ void temp() {
 				    
 						break;
 				
+					//fahrenheit
 					case 2:
 				    
 						t2 = ( t1 - 273.15 ) * 9 / 5 + 32;
@@ -340,11 +354,7 @@ void temp() {
 			    
 				}//switch(to)
 
-
-		
-		
 		}//switch(from)
-	
 	
 	}//else
 	

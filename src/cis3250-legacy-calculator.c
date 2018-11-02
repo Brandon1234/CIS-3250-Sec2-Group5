@@ -17,7 +17,6 @@ float input(char*inname)
 	char temp[9999];
 
 	do{
-<<<<<<< HEAD
 		
 		printf("%s",inname);
 		if(!scanf("%f",&key)){
@@ -35,17 +34,6 @@ float input(char*inname)
 	
 	while(1);	 
 	
-=======
-	printf("%s",inname);
-	 if(!scanf("%f",&key)){
-		scanf("%s",&temp);//recieve temp
-			printf("Please try again!\n");
-	}
-	else{
-		return key;
-	}
-	}while(1);
->>>>>>> refs/remotes/origin/luca-merged-branch
 }
 
 float inputAry(char*inname, int num)
@@ -55,7 +43,6 @@ float inputAry(char*inname, int num)
 	char temp[9999];
 
 	do{
-<<<<<<< HEAD
 		
 		printf("%s[%d]: ",inname,num+1);
 		if(!scanf("%f",&key)){
@@ -64,27 +51,15 @@ float inputAry(char*inname, int num)
 			printf("Please try again!\n");
 			
 		} else {
-			
-=======
-	printf("%s[%d]: ",inname,num+1);
-	 if(!scanf("%f",&key)){
-		scanf("%s",&temp);
-			printf("Please try again!\n");
-	}
-	else{
->>>>>>> refs/remotes/origin/luca-merged-branch
+
 		return key;
 		
 		}
 		
 	}
-<<<<<<< HEAD
 	
 	while(1);	
-	 
-=======
-	}while(1);
->>>>>>> refs/remotes/origin/luca-merged-branch
+
 }
 
 float plus(float adder, float addin)
@@ -201,34 +176,28 @@ int spprint(char*screen, char*sym, int ini, int res)
 {
 	
 	printf("%s %d%s = %d\n",screen,ini,sym,res);
-<<<<<<< HEAD
-	
-	return 0;
-	
-=======
 
-return 0;
+	return 0;
 }
 
 float spprintf(char*screen,char*sym,float ini,float res)
 {
 	printf("%s %.4f%s = %.4f\n",screen,ini,sym,res);
 
-return 0;
+	return 0;
 }
 
 float print(char*screen,char*sym,float ini,float upt,float res)
 {
 	printf("%s %.4f %s %.4f = %.4f\n",screen,ini,sym,upt,res);
 
-return 0;
+	return 0;
 }
 float Aryprint(char*screen,float ans)
 {
 	printf("%s : %.4f\n",screen,ans);
 
-return 0;
->>>>>>> refs/remotes/origin/luca-merged-branch
+	return 0;
 }
 	/*
 	#

@@ -494,14 +494,17 @@ int main(int argc, char* argv[])
 
 					switch (operationNumber) {
 
-						case 1: 
+						case 1:
 							matrix_sum();
 						break;
 						
-						case 2: matrix_transpose();
-								break;
-						case 3: matrix_product();
-								break;
+						case 2:
+							matrix_transpose();
+						break;
+
+						case 3:
+							matrix_product();
+						break;
 
 					}
 
@@ -518,10 +521,13 @@ int main(int argc, char* argv[])
 
 					switch(operationNumber) {
 
-						case 1: temp();
-								break;
-						case 2: time();
-								break;
+						case 1: 
+							temp(); 
+						break;
+
+						case 2:
+							time();
+						break;
 
 					}
 

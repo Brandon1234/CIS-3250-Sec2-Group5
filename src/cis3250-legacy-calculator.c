@@ -200,8 +200,6 @@ float Aryprint(char*screen,float ans)
 	return 0;
 }
 
-
-<<<<<<< HEAD
 // Last edited by Noah Chalifour, 11/1 at 8:30 PM
 
 

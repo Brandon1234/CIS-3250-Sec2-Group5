@@ -436,37 +436,37 @@ for(i=0;i<n;i++){
 				//Warp from menu
 				warp1:
 
-				j = 0;
-
-				for(i = 0; i < n; i++) {
-
-					if(numtemp[i] == temp) {
-
-						j++;
-
-					}
-
-				}
-
-				if(j == 1) {
+					j = 0;
 
 					for(i = 0; i < n; i++) {
 
 						if(numtemp[i] == temp) {
 
-							printf("%.4f\n",set[i]);
+							j++;
 
 						}
 
 					}
 
-				}
+					if(j == 1) {
 
-				else {
+						for(i = 0; i < n; i++) {
 
-					printf("Not have mode value\n");
+							if(numtemp[i] == temp) {
 
-				}
+								printf("%.4f\n",set[i]);
+
+							}
+
+						}
+
+					}
+
+					else {
+
+						printf("Not have mode value\n");
+
+					}
 
 			}
 

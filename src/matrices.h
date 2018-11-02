@@ -122,7 +122,7 @@ void matrix_product()
 	}
 	
 	c[i][j]=1;
-	
+	//multiplies the two matrices together
 	for( i=0;i<matrix1Rows;i++ ){
 		for( j=0;j<matrix2Cols;j++ ){
 			
@@ -132,7 +132,7 @@ void matrix_product()
         }
     }
 
-
+	//outputs the final matrix with the products of the two enterd matrices
     printf("The product of the matrix is\n:");
     for( j=0;j<matrix1Cols;j++ ){
         for( i=0;i<matrix2Rows;i++ ){
@@ -159,6 +159,7 @@ void matrix_transpose()
 	
 	float a[rows][cols];
 
+	//gets the matrix to be flipped
 	for( i=0;i<rows;i++ ){
 		
 		printf("Enter the members of row %d :",i+1);
@@ -171,6 +172,7 @@ void matrix_transpose()
 	}
 
 	printf("The transpose of the matrix is\n:");
+	//transposes the matrix
 	for( j=0;j<cols;j++ ){
 		for( i=0;i<rows;i++ ){		
 		

@@ -21,7 +21,7 @@ float input(char*inname)
 		printf("%s",inname);
 		if(!scanf("%f",&key)){
 			
-			scanf("%s",&temp);//recieve temp
+			scanf("%s",temp);//recieve temp
 			printf("Please try again!\n");
 			
 		} else {
@@ -47,7 +47,7 @@ float inputAry(char*inname, int num)
 		printf("%s[%d]: ",inname,num+1);
 		if(!scanf("%f",&key)){
 			
-			scanf("%s",&temp);
+			scanf("%s",temp);
 			printf("Please try again!\n");
 			
 		} else {
@@ -207,7 +207,6 @@ int main(int argc, char* argv[]) {
     
     // Initial variable declarations
 	float a, b, c;
-	float r1, r2;
 	int menu, rmenu, smenu;
 
     // Start of master loop
@@ -613,7 +612,6 @@ int main(int argc, char* argv[]) {
 
 					sum += termsArray[i];
 
-						}
 				}
 
 				// The average value of the array 

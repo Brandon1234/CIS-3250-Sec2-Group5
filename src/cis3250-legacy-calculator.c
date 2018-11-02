@@ -146,20 +146,14 @@ float Aryprint(char*screen,float ans)
 return 0;
 }
 
-	/*
-	#
-	#
-	#  NOAH
-	#
-	#
-	*/
+// Last edited by Noah Chalifour, 11/1 at 8:30 PM
 
-int main(int argc, char* argv[]) {
-    
+int main(int argc, char* argv[])
+{
     // Initial variable declarations
-	float a, b, c;
-	float r1, r2;
-	int menu, rmenu, smenu;
+    float a, b, c;
+    float r1, r2;
+    int menu, rmenu, smenu;
 
     // Start of master loop
     do {
@@ -174,7 +168,6 @@ int main(int argc, char* argv[]) {
         printf("4. Read Help and Notice\n");
         printf("0. Exit\n");
         
-        // Get the input choice from the user
         menu = input("Select Menu: ");
         system("clear");
 
@@ -183,7 +176,6 @@ int main(int argc, char* argv[]) {
             
             // User chose the regular calculator
             
-            // Loop for regular calculator
             do {
                 
                 // Print regular calculator menu to user
@@ -205,14 +197,12 @@ int main(int argc, char* argv[]) {
                     
                     // User chose addition
                     
-                    // Get two values from the user
                     a = input("Enter value 1 st: ");
                     b = input("Enter value 2 nd: ");
                     
                     // Perform the addition
                     c = plus(a, b);
                     
-                    // Print the result to the user
                     printf("\n");
                     print("sum of", "plus", a, b, c);
                     
@@ -222,14 +212,12 @@ int main(int argc, char* argv[]) {
                     
                     // User chose subtraction
                     
-                    // Get two values from the user
                     a = input("Enter value 1 st: ");
                     b = input("Enter value 2 nd: ");
                     
                     // Perform the subtraction
                     c = minus(a, b);
-                    
-                    // Print the result to the user
+
                     printf("\n");
                     print("result of", "minus", a, b, c);
                     
@@ -243,10 +231,9 @@ int main(int argc, char* argv[]) {
                     a = input("Enter value 1 st: ");
                     b = input("Enter value 2 nd: ");
                     
-                    // Perform the multiplication
+                    // Perform the multiplication (a * b)
                     c = mult(a, b);
                     
-                    // Print the result to the user
                     printf("\n");
                     print("result of", "x", a, b, c);
                     
@@ -256,14 +243,12 @@ int main(int argc, char* argv[]) {
                     
                     // User chose division
                     
-                    // Get two values from the user
                     a = input("Enter value 1 st: ");
                     b = input("Enter value 2 nd: ");
                     
-                    // Perform the division
+                    // Perform the division (a / b)
                     c = divind(a ,b);
                     
-                    // Print the result to the user
                     printf("\n");
                     print("result", "/", a, b, c);
                     
@@ -278,7 +263,6 @@ int main(int argc, char* argv[]) {
             
             // User chose the scientific calculator
 
-            // Loop for the scientific calculator
             do {
                 
                 // Print scientific calculator menu to user
@@ -307,14 +291,12 @@ int main(int argc, char* argv[]) {
                     
                     // User chose the power function
                     
-                    // Get base and power values from user
                     a = input("Enter base(x): ");
                     b = input("Enter power(y): ");
                     
                     // Perform the power function
                     c = powerfn(a, b);
                     
-                    // Print the result to the user
                     printf("\n");
                     print("result of", "^", a, b, c);
                     
@@ -324,13 +306,11 @@ int main(int argc, char* argv[]) {
                     
                     // User chose the factorial
                     
-                    // Get the factorial term from the user
                     a = input("Enter numbers of term: ");
                     
                     // Perform the factorial
                     c = fact(a);
                     
-                    // Print the result to the user
                     printf("\n");
                     spprint("Factorial of", "!", a, c);
                     
@@ -340,13 +320,11 @@ int main(int argc, char* argv[]) {
                     
                     // User chose the fibonacci series
                     
-                    // Get the number of terms from the user
                     a = input("Enter numbers of term: ");
                     
                     // Get fibonacci result
                     c = fib(a);
                     
-                    // Print the result to the user
                     printf("\n");
                     spprint("Fibonacci of", " ", a, c);
                     
@@ -356,13 +334,11 @@ int main(int argc, char* argv[]) {
                     
                     // User chose the sine function
                     
-                    // Get value from user
                     a = input("Enter your value: ");
                     
                     // Get sine of value
                     c = sine(a);
                     
-                    // Print result to the user
                     printf("\n");
                     spprintf("Sine of", " ", a, c);
                     
@@ -372,13 +348,11 @@ int main(int argc, char* argv[]) {
                     
                     // User chose the cosine function
                     
-                    // Get value from user
                     a = input("Enter your value: ");
                     
                     // Get cosine of value
                     c = cosine(a);
                     
-                    // Print result to the user
                     printf("\n");
                     spprintf("Cosine of", " ", a, c);
                     

@@ -22,16 +22,16 @@ void matrix_sum()
 	getchar();
 	
 	//if both matrices have the same number of rows and columns
-	if(matrix1Rows==matrix2Rows&&matrix1Cols==matrix2Cols){
+	if(matrix1Rows == matrix2Rows && matrix1Cols == matrix2Cols){
 
 		float a[matrix1Rows][matrix1Cols];
 		float b[matrix2Rows][matrix2Cols];
 		float c[matrix1Rows][matrix1Cols];
 
 		//gets the values for each row of matrix 1
-		for( i=0;i<matrix1Rows;i++ ){
+		for (i = 0; i < matrix1Rows; i++){
 			printf("Enter the members of matrix 1 row %d :",i+1);
-			for( j=0;j<matrix1Cols;j++ ){
+			for (j = 0; j < matrix1Cols; j++){
 				
 				scanf("%f",&a[i][j]);
 				
@@ -39,11 +39,11 @@ void matrix_sum()
 		}
 		
 		//gets the values for each row of matrix 2 
-		for( i=0;i<matrix2Rows;i++ ){
+		for (i = 0; i < matrix2Rows; i++){
 			
 			printf("Enter the members of matrix 2 row %d :",i+1);
 			
-			for( j=0;j<matrix2Cols;j++ ){
+			for (j = 0; j < matrix2Cols; j++){
 				
 				scanf("%f",&b[i][j]);
 				
@@ -51,8 +51,8 @@ void matrix_sum()
 		}
 		
 		//using matrix addition, adds each row and column value together to get a new matrix
-		for( i=0;i<matrix1Rows;i++ ){
-			for( j=0;j<matrix1Cols;j++ ){
+		for (i = 0; i < matrix1Rows; i++){
+			for (j = 0; j < matrix1Cols; j++){
 				
 				c[i][j]=a[i][j]+b[i][j];
 				
@@ -61,8 +61,8 @@ void matrix_sum()
 		
 		//outputs the new matrix as a table
 		printf("The sum of both matrices is\n:");
-        for( j=0;j<matrix1Cols;j++ ){
-            for( i=0;i<matrix1Rows;i++ ){
+        for (j = 0;j < matrix1Cols; j++){
+            for (i = 0; i < matrix1Rows; i++){
 				
                 printf("\t\t %.0f",c[i][j]);
 				
@@ -102,9 +102,9 @@ void matrix_product()
 	float c[matrix1Rows][matrix1Cols];
 	
 	//gets the values for each row in matrix 1
-	for( i=0;i<matrix1Rows;i++ ){
+	for (i = 0; i < matrix1Rows; i++){
 		printf("Enter the members of matrix 1 row %d :",i+1);
-		for( j=0;j<matrix1Cols;j++ ){
+		for (j = 0; j < matrix1Cols; j++){
 			
 			scanf("%f",&a[i][j]);
 			
@@ -112,9 +112,9 @@ void matrix_product()
 	}
 	
 	//gets the values for each row in matrix 2
-	for( i=0;i<matrix2Rows;i++ ){
+	for (i = 0; i < matrix2Rows; i++){
 		printf("Enter the members of matrix 2 row %d :",i+1);
-		for( j=0;j<matrix2Cols;j++ ){
+		for (j = 0; j < matrix2Cols; j++){
 			
 			scanf("%f",&b[i][j]);
 			
@@ -123,8 +123,8 @@ void matrix_product()
 	
 	c[i][j]=1;
 	//multiplies the two matrices together
-	for( i=0;i<matrix1Rows;i++ ){
-		for( j=0;j<matrix2Cols;j++ ){
+	for (i = 0; i < matrix1Rows; i++){
+		for (j = 0; j < matrix2Cols; j++){
 			
             c[i][j]=0;
             c[i][j]+=a[i][j]*b[i][j];
@@ -134,8 +134,8 @@ void matrix_product()
 
 	//outputs the final matrix with the products of the two enterd matrices
     printf("The product of the matrix is\n:");
-    for( j=0;j<matrix1Cols;j++ ){
-        for( i=0;i<matrix2Rows;i++ ){
+    for (j = 0; j < matrix1Cols; j++){
+        for (i = 0; i < matrix2Rows; i++){
 			
             printf("\t\t %.0f",a[i][j]);
 			
@@ -160,11 +160,11 @@ void matrix_transpose()
 	float a[rows][cols];
 
 	//gets the matrix to be flipped
-	for( i=0;i<rows;i++ ){
+	for (i = 0; i < rows; i++){
 		
 		printf("Enter the members of row %d :",i+1);
 		
-		for( j=0;j<cols;j++ ){
+		for (j=0; j < cols; j++){
 			
 			scanf("%f",&a[i][j]);
 			
@@ -173,8 +173,8 @@ void matrix_transpose()
 
 	printf("The transpose of the matrix is\n:");
 	//transposes the matrix
-	for( j=0;j<cols;j++ ){
-		for( i=0;i<rows;i++ ){		
+	for (j = 0; j < cols; j++){
+		for (i = 0; i < rows; i++){		
 		
 			printf("\t\t %.0f",a[i][j]);
 			

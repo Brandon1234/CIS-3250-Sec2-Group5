@@ -247,7 +247,7 @@ void time()
 void temp() {
 	
 	int from, to;
-	double t1, t2, t3;
+	double t1, t2;
 
 	//converts inputted tempurature between celsius, kelvin, and fahrenheit 
 	//based upon the user input

@@ -154,435 +154,624 @@ return 0;
 	#
 	*/
 
-int main(int argc,char*argv[])
-{
-	float a,b,c;
-	float r1,r2;
-	char sym;
-	int menu,rmenu,smenu;
+int main(int argc, char* argv[]) {
+    
+    // Initial variable declarations
+	float a, b, c;
+	float r1, r2;
+	int menu, rmenu, smenu;
 
+    // Start of master loop
+    do {
+        
+        // Print starting menu to the user
+        printf("\n======\n");
+        printf("Menu\n");
+        printf("======\n");
+        printf("1. Regular Calculator\n");
+        printf("2. Scientific Calculator\n");
+        printf("3. Acountant Calculator\n");
+        printf("4. Read Help and Notice\n");
+        printf("0. Exit\n");
+        
+        // Get the input choice from the user
+        menu = input("Select Menu: ");
+        system("clear");
 
-do{
-	printf("\n======\n");
-	printf("Menu\n");
-	printf("======\n");
-	printf("1.Regular Calculator\n");
-	printf("2.Scientific Calculator\n");
-	printf("3.Acountant Calculator\n");
-	printf("4.Read Help and Notice\n");
-	printf("0.Exit\n");
-	menu = input("Select Menu: ");//input main menu
-	system("clear");
+        // Handle user choice
+        if (menu == 1) {
+            
+            // User chose the regular calculator
+            
+            // Loop for regular calculator
+            do {
+                
+                // Print regular calculator menu to user
+                printf("\n======================\n");
+                printf("Regular Calculator Menu\n");
+                printf("=======================\n");
+                printf("1. PLUS\n");
+                printf("2. MINUS\n");
+                printf("3. MULTIPLY\n");
+                printf("4. DIVIDE\n");
+                printf("0. BACK\n");
+                
+                // Get the input choice from the user
+                rmenu = input("Select Menu: ");
+                system("clear");
 
-if(menu==1){
+                // Handle regular calculator choice
+                if (rmenu == 1) {
+                    
+                    // User chose addition
+                    
+                    // Get two values from the user
+                    a = input("Enter value 1 st: ");
+                    b = input("Enter value 2 nd: ");
+                    
+                    // Perform the addition
+                    c = plus(a, b);
+                    
+                    // Print the result to the user
+                    printf("\n");
+                    print("sum of", "plus", a, b, c);
+                    
+                }
 
-do{
-	printf("\n======================\n");
-	printf("Regular Calculator Menu\n");
-	printf("=======================\n");
-	printf("1.PLUS\n");
-	printf("2.MINUS\n");
-	printf("3.MULTIPLY\n");
-	printf("4.DIVIDE\n");
-	printf("0.BACK\n");
-	rmenu = input("Select Menu: ");//input regular  menu
-	system("clear");
+                if (rmenu == 2) {
+                    
+                    // User chose subtraction
+                    
+                    // Get two values from the user
+                    a = input("Enter value 1 st: ");
+                    b = input("Enter value 2 nd: ");
+                    
+                    // Perform the subtraction
+                    c = minus(a, b);
+                    
+                    // Print the result to the user
+                    printf("\n");
+                    print("result of", "minus", a, b, c);
+                    
+                }
 
+                if (rmenu == 3) {
+                    
+                    // User chose multiplication
+                    
+                    // Get two values from the user
+                    a = input("Enter value 1 st: ");
+                    b = input("Enter value 2 nd: ");
+                    
+                    // Perform the multiplication
+                    c = mult(a, b);
+                    
+                    // Print the result to the user
+                    printf("\n");
+                    print("result of", "x", a, b, c);
+                    
+                }
 
-	if(rmenu==1){
-		a=input("Enter value 1 st: ");
-		b=input("Enter value 2 nd: ");
-		c=plus(a,b);
-		printf("\n");
-		print("sum of","plus",a,b,c);
-	}
+                if (rmenu == 4) {
+                    
+                    // User chose division
+                    
+                    // Get two values from the user
+                    a = input("Enter value 1 st: ");
+                    b = input("Enter value 2 nd: ");
+                    
+                    // Perform the division
+                    c = divind(a ,b);
+                    
+                    // Print the result to the user
+                    printf("\n");
+                    print("result", "/", a, b, c);
+                    
+                }
 
-	if(rmenu==2){
-		a=input("Enter value 1 st: ");
-		b=input("Enter value 2 nd: ");
-		c=minus(a,b);
-		printf("\n");
-		print("result of","minus",a,b,c);
-	}
+            // Go back to the master menu if user chose 0
+            } while (rmenu != 0);
+            
+        }
 
-	if(rmenu==3){
-		a=input("Enter value 1 st: ");
-		b=input("Enter value 2 nd: ");
-		c=mult(a,b);
-		printf("\n");
-		print("result of","x",a,b,c);
-	}
+        if (menu == 2) {
+            
+            // User chose the scientific calculator
 
-	if(rmenu==4){
-		a=input("Enter value 1 st: ");
-		b=input("Enter value 2 nd: ");
-		c=divind(a,b);
-		printf("\n");
-		print("result","/",a,b,c);
-	}
+            // Loop for the scientific calculator
+            do {
+                
+                // Print scientific calculator menu to user
+                printf("\n===========================\n");
+                printf("Scientific Calculator Menu\n");
+                printf("===========================\n");
+                printf("1. Power function (x^y)\n");
+                printf("2. Factorial Series (x!)\n");
+                printf("3. Fibonacci Series \n");
+                printf("4. Sine (Sin x)\n");
+                printf("5. Cosine (cos x)\n");
+                printf("6. Tangent (Tan x)\n");
+                printf("7. Cosec (cosec x)\n");
+                printf("8. Sec (sec x)\n");
+                printf("9. Cot (cot x)\n");
+                printf("10. Matrix functions\n");
+                printf("11. Conversion functions\n");
+                printf("0. Back\n");
+                
+                // Get menu choice from the user
+                smenu = input("Select Menu: ");
+                system("clear");
 
-}while(rmenu!=0);
-}
+                // Handle scientific menu choice
+                if (smenu == 1) {
+                    
+                    // User chose the power function
+                    
+                    // Get base and power values from user
+                    a = input("Enter base(x): ");
+                    b = input("Enter power(y): ");
+                    
+                    // Perform the power function
+                    c = powerfn(a, b);
+                    
+                    // Print the result to the user
+                    printf("\n");
+                    print("result of", "^", a, b, c);
+                    
+                }
 
-if(menu==2){
+                if (smenu == 2) {
+                    
+                    // User chose the factorial
+                    
+                    // Get the factorial term from the user
+                    a = input("Enter numbers of term: ");
+                    
+                    // Perform the factorial
+                    c = fact(a);
+                    
+                    // Print the result to the user
+                    printf("\n");
+                    spprint("Factorial of", "!", a, c);
+                    
+                }
 
-	do{
-		printf("\n===========================\n");
-		printf("Scientific Calculator Menu\n");
-		printf("===========================\n");
-		printf("1.Power function (x^y)\n");
-		printf("2.Factorial Series (x!)\n");
-		printf("3.Fibonacci Series \n");
-		printf("4.Sine (Sin x)\n");
-		printf("5.Cosine (cos x)\n");
-		printf("6.Tangent (Tan x)\n");
-		printf("7.Cosec (cosec x)\n");
-		printf("8.Sec (sec x)\n");
-		printf("9.Cot (cot x)\n");
-		printf("10.Matrix functions\n");
-		printf("11.Conversion functions\n");
-		printf("0.Back\n");
-		smenu = input("Select Menu: ");
-		system("clear");
+                if (smenu == 3) {
+                    
+                    // User chose the fibonacci series
+                    
+                    // Get the number of terms from the user
+                    a = input("Enter numbers of term: ");
+                    
+                    // Get fibonacci result
+                    c = fib(a);
+                    
+                    // Print the result to the user
+                    printf("\n");
+                    spprint("Fibonacci of", " ", a, c);
+                    
+                }
 
-	if(smenu==1){
-		a=input("Enter base(x): ");
-		b=input("Enter power(y): ");
-		c=powerfn(a,b);
-		printf("\n");
-		print("result of","^",a,b,c);
-	}
+                if (smenu == 4) {
+                    
+                    // User chose the sine function
+                    
+                    // Get value from user
+                    a = input("Enter your value: ");
+                    
+                    // Get sine of value
+                    c = sine(a);
+                    
+                    // Print result to the user
+                    printf("\n");
+                    spprintf("Sine of", " ", a, c);
+                    
+                }
 
-	if(smenu==2){
-		a=input("Enter numbers of term: ");
-		c=fact(a);
-		printf("\n");
-		spprint("Factorial of","!",a,c);
-	}
+                if (smenu == 5) {
+                    
+                    // User chose the cosine function
+                    
+                    // Get value from user
+                    a = input("Enter your value: ");
+                    
+                    // Get cosine of value
+                    c = cosine(a);
+                    
+                    // Print result to the user
+                    printf("\n");
+                    spprintf("Cosine of", " ", a, c);
+                    
+                }
 
-	if(smenu==3){
-		a=input("Enter numbers of term: ");
-		c=fib(a);
-		printf("\n");
-		spprint("Fibonacci of"," ",a,c);
-	}
+                //Last edited by Luca Bozzetto on 10/31 18:00 PM
 
-	if(smenu==4){
-		a=input("Enter your value: ");
-		c=sine(a);
-		printf("\n");
-		spprintf("Sine of"," ",a,c);
-	}
+				// Tangent
+				if (smenu == 6) {
 
-	if(smenu==5){
-		a=input("Enter your value: ");
-		c=cosine(a);
-		printf("\n");
-		spprintf("Cosine of"," ",a,c);
-	}
+					float userInput, sin, cos, tangent;
 
-	/*
-	#
-	#
-	# LUCA BOZZETTO
-	#
-	#
-	*/
+					userInput = input("Enter your value: ");
 
-	if(smenu==6){
-		a=input("Enter your value: ");
-		r1=sine(a);
-		r2=cosine(a);
-		c=r1/r2;
-		printf("\n");
-		spprintf("Tangent of"," ",a,c);
-	}
+					// Tanger is defined as sin / cos
+					sin = sine(userInput);
+					cos = cosine(userInput);
+					tangent = sin / cos;
 
-	if(smenu==7){
-		a=input("Enter your value: ");
-		c=sine(a);
-		printf("\n");
-		spprintf("Cosec of"," ",a,1/c);
-	}
-
-	if(smenu==5){
-		a=input("Enter your value: ");
-		c=cosine(a);
-		printf("\n");
-		spprintf("Sec of"," ",a,1/c);
-	}
-
-	if(smenu==8){
-		a=input("Enter your value: ");
-		r1=sine(a);
-		r2=cosine(a);
-		c=r1/r2;
-		printf("\n");
-		spprintf("Cot of"," ",a,1/c);
-	}
-
-	if(smenu==10){
-		int operation_number=0;
-			   printf("\n\t\tSum of Matrices(1)\t\tTranspose(2)\t\tProduct of Matrices(3)");
-	   printf("\n\tEnter an operation command:");
-	   scanf("%d",&operation_number);
-
-	  switch(operation_number){
-	   case 1: matrix_sum();break;
-	   case 2: matrix_transpose();break;
-	   case 3: matrix_product();break;
-	   }
-	}
-
-	if(smenu==11){
-		int operation_number=0;
-				printf("\n\n\n\t\tTemperature(1)\t\tTime(2)");
-		printf("\n\n\n\t\tPlease choose an operation number:");
-		scanf("%d",&operation_number);
-
-		switch(operation_number){
-			case 1: temp();break;
-			case 2: time();break;
-		}
-		break;
-
-	}
-
-
-
-}while(smenu!=0);
-}
-
-if(menu==3){
-
-	warp:
-
-		//system("clear");
-		printf("\n===========================\n");
-		printf("Accountant Calculator Menu\n");
-		printf("===========================\n");
-		printf("Please set value first\n");
-		printf("\n");
-
-	int n,i,j,amenu;
-	float rest,max,min,x_bar=0,sum=0;
-	float med,mod,count;
-	int temp;
-
-		n=input("Enter number of term: ");
-
-	float set[n];
-	int numtemp[n];
-
-	 for(i=0;i<n;i++){
-		set[i]=inputAry("Enter value terms",i);
-	}
-
-	 for(i=0;i<n;i++){
-		 for(j=0;j<=i;j++){
-				 if(set[j]>set[i]){
-				rest=set[j];
-				set[j]=set[i];
-				set[i]=rest;
-			 }
-		}
-	}
-
-min = set[0];
-max = set[n-1];
-
-for(i=0;i<n;i++){
-	sum+=set[i];
-}
-x_bar=(sum/n);
-
-if((n%2)!=0){
-	med=set[((n+1)/2)-1];
-}
-else{
-	med=(set[((n+1)/2)]+set[((n+1)/2)-1])/2;
-}
-
-for(i=0;i<n;i++){
-	numtemp[i]=0;
-}
-for(i=0;i<n;i++){
-	temp=set[i];
-	for(j=i;j<n;j++){
-	if(set[j]==temp){
-		numtemp[i]++;
-	}
-	}
-}
-
-	
-	// Last edited by Ryan Paul on 11/01 4:24 PM
-
-			temp = numtemp[0];
-
-			for(i = 1; i < n; i++) {
-
-				if(numtemp[i] > temp) {
-
-					temp = numtemp[i];
+					printf("\n");
+					spprintf("Tangent of", " ", userInput, tangent);
 
 				}
 
-			}
+				// Cosecant
+				if (smenu == 7) {
 
-			//Always False If
-			if (i == 999) {
+					float userInput, sin, cosecant;
 
-				//Warp from menu
-				warp1:
+					userInput = input("Enter your value: ");
 
-					j = 0;
+					// Cosecant is defined as 1 / sin
+					sin = sine(userInput);
+					cosecant = 1 / sin;
 
-					for(i = 0; i < n; i++) {
+					printf("\n");
+					spprintf("Cosec of", " ", userInput, cosecant);
 
-						if(numtemp[i] == temp) {
+				}
 
-							j++;
+				// Secant
+				if (smenu == 8) {
+					
+					float userInput, cos, secant;
 
-						}
+					userInput = input("Enter your value: ");
+
+					// Secant is defined as 1 / cos
+					cos = cosine(userInput);
+					secant = 1 / cos;
+
+					printf("\n");
+					spprintf("Sec of", " ", userInput, secant);
+
+				}
+
+				// Cotangent
+				if (smenu == 9) {
+
+					float userInput, sin, cos, tangent, cotangent;
+
+					userInput = input("Enter your value: ");
+
+					// Cotangent is defined as 1 / tangent
+					sin = sine(userInput);
+					cos = cosine(userInput);
+					tangent = cos/sin;
+					cotangent = 1/tangent;
+
+					printf("\n");
+					spprintf("Cot of", " ", userInput, cotangent);
+
+				}
+
+				// Matrix functions
+				if (smenu == 10) {
+					
+					int operationNumber = 0;
+
+					printf("\n\t\tSum of Matrices(1)\t\tTranspose(2)\t\tProduct of Matrices(3)");
+					printf("\n\tEnter an operation command:");
+					scanf("%d", &operationNumber);
+
+					switch (operationNumber) {
+
+						case 1:
+							matrix_sum();
+						break;
+						
+						case 2:
+							matrix_transpose();
+						break;
+
+						case 3:
+							matrix_product();
+						break;
 
 					}
 
-					if(j == 1) {
+				}
 
-						for(i = 0; i < n; i++) {
+				// Conversion functions
+				if (smenu == 11) {
 
-							if(numtemp[i] == temp) {
+					int operationNumber = 0;
+					
+					printf("\n\n\n\t\tTemperature(1)\t\tTime(2)");
+					printf("\n\n\n\t\tPlease choose an operation number:");
+					scanf("%d", &operationNumber);
 
-								printf("%.4f\n",set[i]);
+					switch(operationNumber) {
 
-							}
+						case 1: 
+							temp(); 
+						break;
 
-						}
+						case 2:
+							time();
+						break;
 
 					}
 
-					else {
+					break;
 
-						printf("Not have mode value\n");
+				}
 
-					}
+			} while (smenu != 0);
 
-			}
+		}
 
-			// Start of main loop
-			do {
+		// Accountant Calculator
+		if (menu == 3) {
 
-				// Printing Accountant menu
+			accountantInsertValues:
+
 				printf("\n===========================\n");
 				printf("Accountant Calculator Menu\n");
 				printf("===========================\n");
-				printf("1.Show max\n");
-				printf("2.Show min\n");
-				printf("3.Show x-bar\n");
-				printf("4.Show range\n");
-				printf("5.Show Med\n");
-				printf("6.Show Mode\n");
-				printf("7.Show value(sort)\n");
-				printf("8.Set new value\n");
-				printf("0.Back\n");
+				printf("Please set value first\n");
+				printf("\n");
 
-				//input for acountant menu
-				amenu = input("Select Menu: ");
-				system("clear");
+				int numberOfTerm, temp, i, j, amenu;
+				float swap, max, min, average, sum;
+				float median;
 
-				//handle choice
-				if(amenu == 1) {
+				average = 0;
+				sum = 0;
 
-					//prints max value to user
-					printf("\n");
-					Aryprint("Max is", max);
+				// The user defines how many values we have to read
+				numberOfTerm = input("Enter number of term: ");
 
-				}
+				float termsArray[numberOfTerm];
+				int temporaryArray[numberOfTerm];
 
-				if(amenu == 2) {
+				// Get all user values
+				for (i = 0; i < numberOfTerm; i++) {
 
-					//prints min value to user
-					printf("\n");
-					Aryprint("Min is", min);
+					termsArray[i] = inputAry("Enter value terms", i);
 
 				}
 
-				if(amenu == 3) {
+				// Reorder the array from smallest element to greatest
+				for (i = 0; i < numberOfTerm; i++) {
 
-					//prints x-bar to user
-					printf("\n");
-					Aryprint("X-bar is", x_bar);
+					for (j = 0; j <= i; j++) {
 
-				}
+						if (termsArray[j] > termsArray[i]) {
 
-				if(amenu == 4) {
+							swap = termsArray[j];
+							termsArray[j] = termsArray[i];
+							termsArray[i] = swap;
 
-					//prints range to user
-					printf("\n");
-					Aryprint("Range is", max-min);
-
-				}
-
-				if(amenu == 5) {
-
-					//prints median to user
-					printf("\n");
-					Aryprint("Med is", med);
-
-				}
-
-				if(amenu == 6) {
-
-					//prints mode to user
-					printf("\n");
-					printf("Mode is: ");
-					goto warp1;
-
-				}
-
-				if(amenu == 7) {
-
-					//prints out sorted values
-					printf("\n");
-					printf("Set of number is(sort): ");
-
-					for(i = 0; i < n; i++) {
-
-						printf("%.3f ", set[i]);
+						}
 
 					}
 
 				}
 
-				if(amenu == 8) {
+				min = termsArray[0];
+				max = termsArray[numberOfTerm-1];
 
-					//goes to initial warp and prompts for values
-					goto warp;
+				// Compute the total sum of the array
+				for (i = 0; i < numberOfTerm; i++) {
+
+					sum += termsArray[i];
 
 				}
 
-			// Continue while amenu is not equal to 0
-			} while(amenu != 0);
+				// The average value of the array 
+				average = sum / numberOfTerm;
 
-		}
+				/***
+				 * The median value is the "middle" of a sorted list of numbers
+				 * If there is an even number of terms, the median is then the mean
+				 * of the two middle values.
+				***/
+				if ((numberOfTerm % 2) != 0) {
 
-		if(menu == 4) {
+					median = termsArray[((numberOfTerm + 1) / 2) - 1];
 
-			char text;
+				}
+				else {
 
-			//prints out help guidelines
-			help = fopen("User_helping.txt", "r");
+					median = (termsArray[((numberOfTerm + 1) / 2)] 
+						+ termsArray[((numberOfTerm + 1) / 2) - 1]) / 2;
 
-			while((text = fgetc(help)) != EOF) {
+				}
 
-				fprintf(stdout,"%c", text);
+				// Initialize temporaryArray to 0
+				memset(temporaryArray, 0, numberOfTerm);
 
-			}
+				for (i = 0; i < numberOfTerm; i++) {
 
-			fclose(help);
+					temp = termsArray[i];
+					for (j = i; j < numberOfTerm; j++) {
 
-		}
+						if (termsArray[j] == temp) {
+
+							temporaryArray[i]++;
+
+						}
+
+					}
+
+				}
+
+	
+	// Last edited by Ryan Paul on Nov 2 3:34 PM
+
+            temp = temporaryArray[0];
+
+            for(i = 1; i < numberOfTerm; i++) {
+
+                if(temporaryArray[i] > temp) {
+
+                    temp = temporaryArray[i];
+
+                }
+
+            }
+
+            //Always False If
+            if (i == 999) {
+
+                //Warp form menu
+                warp1:
+
+	                j = 0;
+
+	                for(i = 0; i < numberOfTerm; i++) {
+
+	                        if(temporaryArray[i] == temp) {
+
+	                            j++;
+
+	                        }
+	                }
+
+	                if(j == 1) {
+
+	                    for(i = 0; i < numberOfTerm; i++) {
+
+	                        if(temporaryArray[i] == temp) {
+
+	                            printf("%.4f\n", termsArray[i]);
+
+	                        }
+
+	                    }
+
+	                }
+
+	                else {
+
+	                        printf("Not have mode value\n");
+
+	                }
+
+            }
+
+            // Start of main loop
+            do {
+
+                // Printing Accountant menu
+                printf("\n===========================\n");
+                printf("Accountant Calculator Menu\n");
+                printf("===========================\n");
+                printf("1.Show max\n");
+                printf("2.Show min\n");
+                printf("3.Show x-bar\n");
+                printf("4.Show range\n");
+                printf("5.Show Med\n");
+                printf("6.Show Mode\n");
+                printf("7.Show value(sort)\n");
+                printf("8.Set new value\n");
+                printf("0.Back\n");
+
+                //input for acountant menu
+                amenu = input("Select Menu: ");
+                system("clear");
+
+                //handle choice
+                if(amenu == 1) {
+
+                    //prints max value to user
+                    printf("\n");
+                    Aryprint("Max is", max);
+
+                }
+
+                if(amenu == 2) {
+
+                    //prints min value to user
+                    printf("\n");
+                    Aryprint("Min is", min);
+
+                }
+
+                if(amenu == 3) {
+
+                    //prints x-bar to user
+                    printf("\n");
+                    Aryprint("X-bar is", average);
+
+                }
+
+                if(amenu == 4) {
+
+                    //prints range to user
+                    printf("\n");
+                    Aryprint("Range is", max-min);
+
+                }
+
+                if(amenu == 5) {
+
+                    //prints median to user
+                    printf("\n");
+                    Aryprint("Med is", median);
+
+                }
+
+                if(amenu == 6) {
+
+                    //prints mode to user
+                    printf("\n");
+                    printf("Mode is: ");
+                    goto warp1;
+
+                }
+
+                if(amenu == 7) {
+
+                    //prints out sorted values
+                    printf("\n");
+                    printf("Set of number is(sort): ");
+
+                    for(i = 0; i < numberOfTerm; i++) {
+
+                        printf("%.3f ", termsArray[i]);
+
+                    }
+
+                }
+
+                if(amenu == 8) {
+
+                    //goes to initial warp and prompts for values
+                    goto accountantInsertValues;
+
+                }
+
+            // Continue while amenu is not equal to 0
+            } while(amenu != 0);
+
+        }
+
+        if(menu == 4) {
+
+            char text;
+
+            //prints out help guidelines
+            help = fopen("User_helping.txt","r");
+
+            while((text = fgetc(help)) != EOF) {
+
+                fprintf(stdout ,"%c", text);
+
+            }
+
+            fclose(help);
+
+        }
 
 	// Continue while menu is not equal to 0
 	} while(menu != 0);

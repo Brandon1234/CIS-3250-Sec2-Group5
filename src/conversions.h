@@ -173,9 +173,9 @@ void time()
 
 					printf("\n\n\n\t\t%f seconds = %f decades", t1, t2);
 		
-				}//else
+				}
 
-			}//(if to == 8)
+			}
 	  
 		
 			if( to == 9 ) {
@@ -196,7 +196,7 @@ void time()
 
 				}
 
-			}//if( to==9 );
+			}
 
 			if( to == 10 ) {
 
@@ -214,9 +214,9 @@ void time()
 
 					printf("\n\n\n\t\t%f seconds = %f milleniums", t1, t2);
 
-				} //else
+				}
 
-			}//if( to==10 );
+			}
 
 			if( to == 12 ) {
 
@@ -236,13 +236,13 @@ void time()
 
 				}
 
-			}//if(to==12);
+			}
 
-		}//if(from == 1)
+		}
 	
-	}//else { 
+	}
 	
-}//void time()
+}
 
 void temp() {
 	
@@ -327,7 +327,7 @@ void temp() {
 
 			    
 			    
-				}//switch(to);
+				}
 				
 			//converting from kelvin to...
 			case 3:
@@ -352,10 +352,10 @@ void temp() {
 				   
 						break;
 			    
-				}//switch(to)
+				}
 
-		}//switch(from)
+		}
 	
-	}//else
+	}
 	
-}//void temp()
+}

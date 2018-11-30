@@ -1,4 +1,4 @@
-#include "unit_testing.c"
+#include <stdio.h>
 
 /*This function boundary tests the last 4 loops in unit_test.c and the else statement at the end of the file
  *Returns the number of errors that occured during testing and also prints the results of each test
@@ -101,8 +101,12 @@ int main(){
 	
 	printf("~~~~~~~~~~~~~~~~~~~~~~~~\n");
 	printf("Test 2: Data Flow\n");
+	printf("Test 2.1: \n");
+	printf("Test 2.2: \n");
 	
 	
 	printf("~~~~~~~~~~~~~~~~~~~~~~~~\n");
 	printf("Test 3: Structure \n");
+	printf("Test 3.1: User Input Handling");
+	printf("Test 3.2: \n");
 }

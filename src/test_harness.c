@@ -3,7 +3,7 @@
 #include "unit_testing.h"
 #include "unit_testing.c"
 
-//Abdalaziz Elshamli tesing
+//Abdalaziz Elshamli testing
 
 int StructuralBasisTesting( int matrix1Rows, int matrix1Cols, int matrix2Rows, int matrix2Cols)
 {
@@ -957,6 +957,6 @@ int main(){
 	printf("Test 2.1: \n");
 	printf("Test 2.2: \n");
 	
-	//structureTest();
+	structureTest();
 
 }

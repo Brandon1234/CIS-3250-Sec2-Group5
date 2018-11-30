@@ -9,3 +9,6 @@ The code is meant to be compiled on UNIX systems and the compilation can be done
 
 ## Changes
 In order to make changes to the repository, create a new branch from main and commit changes to files in the src folder. Files have various responsibilites according to name, and the main file is "CIS3250-legacy-calculator.c"
+
+## Testing
+The Unit_Testing branch contains the final files to run the test harness. Compile the test_harness.c file and that will run all the tests.

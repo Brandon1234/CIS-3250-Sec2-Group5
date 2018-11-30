@@ -931,8 +931,21 @@ int main(){
 	
 	printf("~~~~~~~~~~~~~~~~~~~~~~~~\n");
 	printf("Test 1: Boundaries\n");
-	boundaryTestLoop4();
-	boundaryTestFirstLoops();
+	printf("~~~~~~~~~~~~~~~~~~~~~~~~\n");
+	
+	printf("Testing the last 4 loops in unit_test.c and the else statement at the end of the file\n");
+	boundTest = boundaryTestLoop4();
+	
+	if(boundTest > 0){
+		printf("Failed: %d\nSucceeded %d", boundTest, (4 - boundTest));
+	} else {
+		printf("SUCCESS - all tests succeeded\n");
+	}
+	
+	printf("~~~~~~~~~~~~~~~~~~~~~~~~\n");
+	printf("Testing the first 4 loops in unit_test.c and the initial if statement.\n");
+	boundTest = boundaryTestFirstLoops();
+	
 	if(boundTest > 0){
 		printf("Failed: %d\nSucceeded %d", boundTest, (4 - boundTest));
 	} else {

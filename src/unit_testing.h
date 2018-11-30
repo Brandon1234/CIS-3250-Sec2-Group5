@@ -75,9 +75,9 @@ unsigned int* last4loops( int matrix1Rows, int matrix1Cols, int matrix2Rows, int
 		float c[matrix1Rows][matrix1Cols];
 
 		//Set the matrices to be zero
-		memset( (void*)a, 0, matrix1Rows * matrix1Cols );
-		memset( (void*)b, 0, matrix2Rows * matrix2Cols );
-		memset( (void*)c, 0, matrix1Rows * matrix1Cols );
+		memset( (void*)a, 0, matrix1Rows * matrix1Cols * sizeof(float) );
+		memset( (void*)b, 0, matrix2Rows * matrix2Cols * sizeof(float) );
+		memset( (void*)c, 0, matrix1Rows * matrix1Cols * sizeof(float) );
 		
 		//Run the loops and count the number of times each loop ran
 		//using matrix addition, adds each row and column value together to get a new matrix

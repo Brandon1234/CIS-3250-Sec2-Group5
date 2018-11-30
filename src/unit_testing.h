@@ -1,4 +1,6 @@
-void matrix_sum(matrix1Rows,matrix1Cols,matrix2Rows,matrix2Cols){
+#include<string.h>
+
+void matrix_sum(int matrix1Rows,int matrix1Cols,int matrix2Rows,int matrix2Cols){
 
 	//if both matrices have the same number of rows and columns
 	if(matrix1Rows == matrix2Rows && matrix1Cols == matrix2Cols){
@@ -8,9 +10,9 @@ void matrix_sum(matrix1Rows,matrix1Cols,matrix2Rows,matrix2Cols){
 		float c[matrix1Rows][matrix1Cols];
 
 		//gets the values for each row of matrix 1
-		for (i = 0; i < matrix1Rows; i++){
+		for (int i = 0; i < matrix1Rows; i++){
 			printf("Enter the members of matrix 1 row %d :",i+1);
-			for (j = 0; j < matrix1Cols; j++){
+			for (int j = 0; j < matrix1Cols; j++){
 				
 				scanf("%f",&a[i][j]);
 				
@@ -18,11 +20,11 @@ void matrix_sum(matrix1Rows,matrix1Cols,matrix2Rows,matrix2Cols){
 		}
 		
 		//gets the values for each row of matrix 2 
-		for (i = 0; i < matrix2Rows; i++){
+		for (int i = 0; i < matrix2Rows; i++){
 			
 			printf("Enter the members of matrix 2 row %d :",i+1);
 			
-			for (j = 0; j < matrix2Cols; j++){
+			for (int j = 0; j < matrix2Cols; j++){
 				
 				scanf("%f",&b[i][j]);
 				
@@ -30,8 +32,8 @@ void matrix_sum(matrix1Rows,matrix1Cols,matrix2Rows,matrix2Cols){
 		}
 		
 		//using matrix addition, adds each row and column value together to get a new matrix
-		for (i = 0; i < matrix1Rows; i++){
-			for (j = 0; j < matrix1Cols; j++){
+		for (int i = 0; i < matrix1Rows; i++){
+			for (int j = 0; j < matrix1Cols; j++){
 				
 				c[i][j]=a[i][j]+b[i][j];
 				
@@ -40,8 +42,8 @@ void matrix_sum(matrix1Rows,matrix1Cols,matrix2Rows,matrix2Cols){
 		
 		//outputs the new matrix as a table
 		printf("The sum of both matrices is\n:");
-        for (j = 0;j < matrix1Cols; j++){
-            for (i = 0; i < matrix1Rows; i++){
+        for (int j = 0;j < matrix1Cols; j++){
+            for (int i = 0; i < matrix1Rows; i++){
 				
                 printf("\t\t %.0f",c[i][j]);
 				
@@ -63,7 +65,7 @@ void matrix_sum(matrix1Rows,matrix1Cols,matrix2Rows,matrix2Cols){
 unsigned int* last4loops( int matrix1Rows, int matrix1Cols, int matrix2Rows, int matrix2Cols )
 {
 	unsigned int* toReturn = malloc( sizeof( unsigned int ) * 5 );
-	memset( (void*)toReturn, 0, 5 );
+	memset( (void*)toReturn, 0, 5 * sizeof( unsigned int ));
 
 	//if both matrices have the same number of rows and columns
 	if( matrix1Rows == matrix2Rows && matrix1Cols == matrix2Cols ) {
@@ -79,9 +81,9 @@ unsigned int* last4loops( int matrix1Rows, int matrix1Cols, int matrix2Rows, int
 		
 		//Run the loops and count the number of times each loop ran
 		//using matrix addition, adds each row and column value together to get a new matrix
-		for ( i = 0; i < matrix1Rows; i++ ) {
+		for ( int i = 0; i < matrix1Rows; i++ ) {
 
-			for ( j = 0; j < matrix1Cols; j++ ) {
+			for ( int j = 0; j < matrix1Cols; j++ ) {
 				
 				c[i][j]=a[i][j]+b[i][j];
 				toReturn[1]++;
@@ -93,9 +95,9 @@ unsigned int* last4loops( int matrix1Rows, int matrix1Cols, int matrix2Rows, int
 		}
 		
 		//outputs the new matrix as a table
-        	for ( j = 0; j < matrix1Cols; j++ ) {
+        	for ( int j = 0; j < matrix1Cols; j++ ) {
 
-			for (i = 0; i < matrix1Rows; i++) {
+			for ( int i = 0; i < matrix1Rows; i++) {
 				
        				toReturn[3]++;
 				

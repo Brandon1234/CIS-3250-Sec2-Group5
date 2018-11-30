@@ -3,6 +3,90 @@
 #include "unit_testing.h"
 #include "unit_testing.c"
 
+#include <stdio.h>
+
+float h[10000][10000];
+float g[10000][10000];
+float f[10000][10000];
+
+int test_matrix(int matrix1Rows, int matrix1Cols, int matrix2Rows, int matrix2Cols) {
+    
+    int i, j;
+    
+    //gets the values for each row of matrix 1
+    for (i = 0; i < matrix1Rows; i++){
+        for (j = 0; j < matrix1Cols; j++){
+            
+            h[i][j] = 1;
+            
+        }
+    }
+    
+    //gets the values for each row of matrix 2
+    for (i = 0; i < matrix2Rows; i++){
+        
+        for (j = 0; j < matrix2Cols; j++){
+            
+            g[i][j] = 1;
+            
+        }
+    }
+    
+    //using matrix addition, adds each row and column value together to get a new matrix
+    for (i = 0; i < matrix1Rows; i++){
+        for (j = 0; j < matrix1Cols; j++){
+            
+            f[i][j]=h[i][j]+g[i][j];
+            if (f[i][j] != 2) {
+                return 0;
+            }
+            
+        }
+    }
+    
+    printf("TEST PASSED\n");
+    
+    return 1;
+    
+}
+
+int dataflow_zeros_test() {
+    
+    printf("TEST: matrix w/ 0 rows and 0 columns\n");
+    
+    return test_matrix(0, 0, 0, 0);
+    
+}
+
+int dataflow_1000_test() {
+    
+    printf("TEST: matrix w/ 1000 rows and 1000 columns\n");
+    
+    return test_matrix(1000, 1000, 1000, 1000);
+    
+}
+
+int dataflow_large_test() {
+    
+    printf("TEST: matrix w/ 10000 rows and 10000 columns\n");
+    
+    return test_matrix(10000, 10000, 10000, 10000);
+    
+}
+
+int dataflow_test() {
+    
+    int passes = 0;
+    
+    passes += dataflow_zeros_test();
+    passes += dataflow_1000_test();
+    passes += dataflow_large_test();
+    
+    return passes;
+    
+}
+
+
 //Abdalaziz Elshamli testing
 
 int StructuralBasisTesting( int matrix1Rows, int matrix1Cols, int matrix2Rows, int matrix2Cols)
@@ -87,15 +171,15 @@ int stb4()
 int stb5()
 {
     int test = StructuralBasisTesting(4.5,4.5,4.5,4.5);
-    if(test == 0)
+    if(test == 1)
     {
         printf("\nTest 5 was completed correctly\n");
-        return 1;
+        return 0;
     }
     else
     {
         printf("\nTest failed\n");
-        return 0;
+        return 1;
     }    
 }
 
@@ -103,15 +187,15 @@ int stb5()
 int stb6()
 {
     int test = StructuralBasisTesting(4.05,4.55,4,4.55);
-    if(test == 0)
+    if(test == 1)
     {
         printf("\nTest 6 was completed correctly\n");
-        return 1;
+        return 0;
     }
     else
     {
         printf("\nTest failed\n");
-        return 0;
+        return 1;
     }    
 }
 
@@ -256,12 +340,12 @@ int forLoopOneTestOne()
     
     if(test == 1)
     {
-        printf("\nTest Passed\n");
+        //printf("\nTest Passed\n");
         return 1;
     }
     else
     {
-        printf("\nTest Failed\n");
+        //printf("\nTest Failed\n");
         return 0;
     }
 }
@@ -273,12 +357,12 @@ int forLoopOneTestTwo()
     
     if(test == 1)
     {
-        printf("\nTest Passed\n");
+        //printf("\nTest Passed\n");
         return 1;
     }
     else
     {
-        printf("\nTest Failed\n");
+        //printf("\nTest Failed\n");
         return 0;
     }
 }
@@ -290,12 +374,12 @@ int forLoopOneTestThree()
     
     if(test == 1)
     {
-        printf("\nTest Passed\n");
+        //printf("\nTest Passed\n");
         return 1;
     }
     else
     {
-        printf("\nTest Failed\n");
+        //printf("\nTest Failed\n");
         return 0;
     }
 }
@@ -307,12 +391,12 @@ int forLoopOneTestFour()
     
     if(test == 1)
     {
-        printf("\nTest Passed\n");
+        //printf("\nTest Passed\n");
         return 1;
     }
     else
     {
-        printf("\nTest Failed\n");
+        //printf("\nTest Failed\n");
         return 0;
     }
 }
@@ -324,12 +408,12 @@ int forLoopTwoTestOne()
     
     if(test == 1)
     {
-        printf("\nTest Passed\n");
+        //printf("\nTest Passed\n");
         return 1;
     }
     else
     {
-        printf("\nTest Failed\n");
+        //printf("\nTest Failed\n");
         return 0;
     }
 }
@@ -341,12 +425,12 @@ int forLoopTwoTestTwo()
     
     if(test == 1)
     {
-        printf("\nTest Passed\n");
+        //printf("\nTest Passed\n");
         return 1;
     }
     else
     {
-        printf("\nTest Failed\n");
+        //printf("\nTest Failed\n");
         return 0;
     }
 }
@@ -358,12 +442,12 @@ int forLoopTwoTestThree()
     
     if(test == 1)
     {
-        printf("\nTest Passed\n");
+        //printf("\nTest Passed\n");
         return 1;
     }
     else
     {
-        printf("\nTest Failed\n");
+        //printf("\nTest Failed\n");
         return 0;
     }
 }
@@ -375,12 +459,12 @@ int forLoopTwoTestFour()
     
     if(test == 1)
     {
-        printf("\nTest Passed\n");
+        //printf("\nTest Passed\n");
         return 1;
     }
     else
     {
-        printf("\nTest Failed\n");
+        //printf("\nTest Failed\n");
         return 0;
     }
 }
@@ -392,12 +476,12 @@ int forLoopThreeTestOne()
     
     if(test == 1)
     {
-        printf("\nTest Passed\n");
+        //printf("\nTest Passed\n");
         return 1;
     }
     else
     {
-        printf("\nTest Failed\n");
+        //printf("\nTest Failed\n");
         return 0;
     }
 }
@@ -409,12 +493,12 @@ int forLoopThreeTestTwo()
     
     if(test == 1)
     {
-        printf("\nTest Passed\n");
+        //printf("\nTest Passed\n");
         return 1;
     }
     else
     {
-        printf("\nTest Failed\n");
+        //printf("\nTest Failed\n");
         return 0;
     }
 }
@@ -426,12 +510,12 @@ int forLoopThreeTestThree()
     
     if(test == 1)
     {
-        printf("\nTest Passed\n");
+        //printf("\nTest Passed\n");
         return 1;
     }
     else
     {
-        printf("\nTest Failed\n");
+        //printf("\nTest Failed\n");
         return 0;
     }
 }
@@ -443,12 +527,12 @@ int forLoopThreeTestFour()
     
     if(test == 1)
     {
-        printf("\nTest Passed\n");
+        //printf("\nTest Passed\n");
         return 1;
     }
     else
     {
-        printf("\nTest Failed\n");
+        //printf("\nTest Failed\n");
         return 0;
     }
 }
@@ -609,7 +693,10 @@ unsigned int boundaryTestFirstLoops()
     
 }
 
-
+/*
+ * Runs the structure tests for test harness
+ * Written by Brandon Lit 2018-11-30
+ */
 void structureTest(){
 	int result = 0;
 	int structurePassed = 0;
@@ -618,12 +705,12 @@ void structureTest(){
 	printf("Test 3.1: Matrix Declaration\n");
 	printf("~~~~~~~~~~~~~~~~~~~~~~~~\n");
 	printf("Test 3.11: Valid input");
-	printf("\tCreating both matrices as 5 x 5's\n");
+	printf("Creating both matrices as 5 x 5's\n");
 	printf("Expected: 1");
 	result = stb1();
-	printf("Received: %d", result);
+	printf("Received: %d\n", result);
 	
-	if(!result){
+	if(result){
 		printf("Test Passed\n");
 		structurePassed += 1;
 	} else {
@@ -631,11 +718,11 @@ void structureTest(){
 	}
 	
 	printf("Test 3.12: Invalid input\n");
-	printf("\tInserting mismatching matrix sizes\n");
-	printf("\tMatrix 1: 4 x 4, Matrix 2: 5 x 5\n");
+	printf("Inserting mismatching matrix sizes\n");
+	printf("Matrix 1: 4 x 4, Matrix 2: 5 x 5\n");
 	printf("Expected: 1\n");
 	result = stb2();
-	printf("Received: %d", result);
+	printf("Received: %d\n", result);
 	
 	if(result){
 		printf("Test Passed\n");
@@ -645,11 +732,11 @@ void structureTest(){
 	}
 	
 	printf("Test 3.13: Valid input, mismatching row/cols\n");
-	printf("\tInserting mismatching matrix rows and columns\n");
-	printf("\tMatrix 1: 4 x 5, Matrix 2: 4 x 5\n");
+	printf("Inserting mismatching matrix rows and columns\n");
+	printf("Matrix 1: 4 x 5, Matrix 2: 4 x 5\n");
 	printf("Expected: 1\n");
 	result = stb3();
-	printf("Received: %d", result);
+	printf("Received: %d\n", result);
 	
 	if(result){
 		printf("Test Passed\n");
@@ -659,11 +746,11 @@ void structureTest(){
 	}
 	
 	printf("Test 3.14: Inserting a string\n");
-	printf("\tInserting the string 'John' instead of an integer \n");
-	printf("\tMatrix 1: John x 5, Matrix 2: 5 x 6\n");
+	printf("Inserting the string 'John' instead of an integer \n");
+	printf("Matrix 1: John x 5, Matrix 2: 5 x 6\n");
 	printf("Expected: 1\n");
 	result = stb4();
-	printf("Received: %d", result);
+	printf("Received: %d\n", result);
 	
 	if(result){
 		printf("Test Passed\n");
@@ -673,13 +760,13 @@ void structureTest(){
 	}
 	
 	printf("Test 3.15: Inserting decimal numbers\n");
-	printf("\tInserting the number 4.5 for all row/col values\n");
-	printf("\tMatrix 1: 4.5 x 4.5, Matrix 2: 4.5 x 4.5\n");
-	printf("Expected: 0");
+	printf("Inserting the number 4.5 for all row/col values\n");
+	printf("Matrix 1: 4.5 x 4.5, Matrix 2: 4.5 x 4.5\n");
+	printf("Expected: 0\n");
 	result = stb5();
-	printf("Received: %d", result);
+	printf("Received: %d\n", result);
 	
-	if(result){
+	if(!result){
 		printf("Test Passed\n");
 		structurePassed += 1;
 	} else {
@@ -687,13 +774,13 @@ void structureTest(){
 	}
 	
 	printf("Test 3.16: Inserting mis-matching decimal numbers\n");
-	printf("\tInserting different decimal numbers for each row/col\n");
-	printf("\tMatrix 1: 4.05 x 4.55, Matrix 2: 4 x 4.55\n");
-	printf("Expected: 1");
+	printf("Inserting different decimal numbers for each row/col\n");
+	printf("Matrix 1: 4.05 x 4.55, Matrix 2: 4 x 4.55\n");
+	printf("Expected: 0\n");
 	result = stb6();
-	printf("Received: %d", result);
+	printf("Received: %d\n", result);
 	
-	if(result){
+	if(!result){
 		printf("Test Passed\n");
 		structurePassed += 1;
 	} else {
@@ -701,11 +788,11 @@ void structureTest(){
 	}
 	
 	printf("Test 3.17: Inserting floats\n");
-	printf("\tInserting 2 floats for each row\n");
-	printf("\tMatrix 1: (float)5 x 5, Matrix 2: (float)5 x 5\n");
-	printf("Expected: 1");
+	printf("Inserting 2 floats for each row\n");
+	printf("Matrix 1: (float)5 x 5, Matrix 2: (float)5 x 5\n");
+	printf("Expected: 1\n");
 	result = stb7();
-	printf("Received: %d", result);
+	printf("Received: %d\n", result);
 	
 	if(result){
 		printf("Test Passed\n");
@@ -715,11 +802,11 @@ void structureTest(){
 	}
 	
 	printf("Test 3.18: Inserting all floats\n");
-	printf("\tInserting floats for each row/col\n");
-	printf("\tMatrix 1: (float)5 x (float)5, Matrix 2: (float)5 x (float)5\n");
-	printf("Expected: 1");
+	printf("Inserting floats for each row/col\n");
+	printf("Matrix 1: (float)5 x (float)5, Matrix 2: (float)5 x (float)5\n");
+	printf("Expected: 1\n");
 	result = stb8();
-	printf("Received: %d", result);
+	printf("Received: %d\n", result);
 	
 	if(result){
 		printf("Test Passed\n");
@@ -729,11 +816,11 @@ void structureTest(){
 	}
 	
 	printf("Test 3.19: Inserting all pointers\n");
-	printf("\tDeclaring int pointers and passing them to the function (As pointers)\n");
-	printf("\tMatrix 1:s 5 x 5, Matrix 2: 5 x 5\n");
-	printf("Expected: 1");
+	printf("Declaring int pointers and passing them to the function (As pointers)\n");
+	printf("Matrix 1:s 5 x 5, Matrix 2: 5 x 5\n");
+	printf("Expected: 1\n");
 	result = stb9();
-	printf("Received: %d", result);
+	printf("Received: %d\n", result);
 	if(result){
 		printf("Test Passed\n");
 		structurePassed += 1;
@@ -742,11 +829,11 @@ void structureTest(){
 	}
 	
 	printf("Test 3.110: Inserting all pointers\n");
-	printf("\tDeclaring an int pointer and passing it with an int\n");
-	printf("\tMatrix 1: (pointer)5 x 5, Matrix 2: (pointer)5 x 5\n");
-	printf("Expected: 1");
+	printf("Declaring an int pointer and passing it with an int\n");
+	printf("Matrix 1: (pointer)5 x 5, Matrix 2: (pointer)5 x 5\n");
+	printf("Expected: 1\n");
 	result = stb10();
-	printf("Received: %d", result);
+	printf("Received: %d\n", result);
 	
 	if(result){
 		printf("Test Passed\n");
@@ -754,6 +841,8 @@ void structureTest(){
 	} else {
 		printf("Test Failed\n");
 	}
+	
+	
 	printf("~~~~~~~~~~~~~~~~~~~~~~~~\n");
 	printf("TOTAL TESTS PASSED: %d\n", structurePassed);
 	printf("TOTAL TESTS FAILED: %d\n", 10 - structurePassed);
@@ -763,10 +852,10 @@ void structureTest(){
 	printf("For loop conditions are determined by user input\n");
 	printf("~~~~~~~~~~~~~~~~~~~~~~~~\n");
 	printf("Test 3.21: Making the outer for loop condition as false\n");
-	printf("\tOuter loop condition: i < 0, Inner loop condition j < 5\n");	
-	printf("Expected: 0");
+	printf("Outer loop condition: i < 0, Inner loop condition j < 5\n");	
+	printf("Expected: 0\n");
 	result = forLoopOneTestOne();
-	printf("Received: %d", result);
+	printf("Received: %d\n", result);
 	
 	if(!result){
 		printf("Test Passed\n");
@@ -776,10 +865,10 @@ void structureTest(){
 	}
 	
 	printf("Test 3.22: Making the inner for loop condition as false\n");
-	printf("\tOuter loop condition: i < 5, Inner loop condition j < 0\n");	
-	printf("Expected: 0");
+	printf("Outer loop condition: i < 5, Inner loop condition j < 0\n");	
+	printf("Expected: 0\n");
 	result = forLoopOneTestTwo();
-	printf("Received: %d", result);
+	printf("Received: %d\n", result);
 	
 	if(!result){
 		printf("Test Passed\n");
@@ -789,10 +878,10 @@ void structureTest(){
 	}
 	
 	printf("Test 3.23: Passing matching input as for loop conditions\n");
-	printf("\tOuter loop condition: i < 5, Inner loop condition j < 5\n");	
-	printf("Expected: 1");
+	printf("Outer loop condition: i < 5, Inner loop condition j < 5\n");	
+	printf("Expected: 1\n");
 	result = forLoopOneTestThree();
-	printf("Received: %d", result);
+	printf("Received: %d\n", result);
 	
 	if(result){
 		printf("Test Passed\n");
@@ -800,12 +889,12 @@ void structureTest(){
 	} else {
 		printf("Test Failed\n");
 	}
-	
+
 	printf("Test 3.24: Passing floats as the for loop conditions\n");
-	printf("\tOuter loop condition: i < (float)5.0, Inner loop condition j < (float)5.0\n");	
-	printf("Expected: 1");
+	printf("Outer loop condition: i < (float)5.0, Inner loop condition j < (float)5.0\n");	
+	printf("Expected: 1\n");
 	result = forLoopOneTestFour();
-	printf("Received: %d", result);
+	printf("Received: %d\n", result);
 	
 	if(result){
 		printf("Test Passed\n");
@@ -817,10 +906,10 @@ void structureTest(){
 	printf("\n~~Now testing second nested for loops~~\n\n");
 	
 	printf("Test 3.25: Making the outer for loop condition as false\n");
-	printf("\tOuter loop condition: i < 0, Inner loop condition j < 5\n");	
-	printf("Expected: 0");
+	printf("Outer loop condition: i < 0, Inner loop condition j < 5\n");	
+	printf("Expected: 0\n");
 	result = forLoopTwoTestOne();
-	printf("Received: %d", result);
+	printf("Received: %d\n", result);
 	
 	if(!result){
 		printf("Test Passed\n");
@@ -830,10 +919,10 @@ void structureTest(){
 	}
 	
 	printf("Test 3.26: Making the inner for loop condition as false\n");
-	printf("\tOuter loop condition: i < 5, Inner loop condition j < 0\n");	
-	printf("Expected: 0");
+	printf("Outer loop condition: i < 5, Inner loop condition j < 0\n");	
+	printf("Expected: 0\n");
 	result = forLoopTwoTestTwo();
-	printf("Received: %d", result);
+	printf("Received: %d\n", result);
 	
 	if(!result){
 		printf("Test Passed\n");
@@ -843,10 +932,10 @@ void structureTest(){
 	}
 	
 	printf("Test 3.27: Passing matching input as for loop conditions\n");
-	printf("\tOuter loop condition: i < 5, Inner loop condition j < 5\n");	
-	printf("Expected: 1");
+	printf("Outer loop condition: i < 5, Inner loop condition j < 5\n");	
+	printf("Expected: 1\n");
 	result = forLoopTwoTestThree();
-	printf("Received: %d", result);
+	printf("Received: %d\n", result);
 	
 	if(result){
 		printf("Test Passed\n");
@@ -856,10 +945,10 @@ void structureTest(){
 	}
 	
 	printf("Test 3.28: Passing floats as the for loop conditions\n");
-	printf("\tOuter loop condition: i < (float)5.0, Inner loop condition j < (float)5.0\n");	
-	printf("Expected: 1");
+	printf("Outer loop condition: i < (float)5.0, Inner loop condition j < (float)5.0\n");	
+	printf("Expected: 1\n");
 	result = forLoopTwoTestFour();
-	printf("Received: %d", result);
+	printf("Received: %d\n", result);
 	
 	if(result){
 		printf("Test Passed\n");
@@ -871,10 +960,10 @@ void structureTest(){
 	printf("\n~~Now testing third nested for loops~~\n\n");
 	
 	printf("Test 3.29: Making the outer for loop condition as false\n");
-	printf("\tOuter loop condition: i < 0, Inner loop condition j < 5\n");	
-	printf("Expected: 0");
+	printf("Outer loop condition: i < 0, Inner loop condition j < 5\n");	
+	printf("Expected: 0\n");
 	result = forLoopTwoTestOne();
-	printf("Received: %d", result);
+	printf("Received: %d\n", result);
 	
 	if(!result){
 		printf("Test Passed\n");
@@ -884,10 +973,10 @@ void structureTest(){
 	}
 	
 	printf("Test 3.210: Making the inner for loop condition as false\n");
-	printf("\tOuter loop condition: i < 5, Inner loop condition j < 0\n");	
-	printf("Expected: 0");
+	printf("Outer loop condition: i < 5, Inner loop condition j < 0\n");	
+	printf("Expected: 0\n");
 	result = forLoopTwoTestTwo();
-	printf("Received: %d", result);
+	printf("Received: %d\n", result);
 	
 	if(!result){
 		printf("Test Passed\n");
@@ -897,10 +986,10 @@ void structureTest(){
 	}
 	
 	printf("Test 3.211: Passing matching input as for loop conditions\n");
-	printf("\tOuter loop condition: i < 5, Inner loop condition j < 5\n");	
-	printf("Expected: 1");
+	printf("Outer loop condition: i < 5, Inner loop condition j < 5\n");	
+	printf("Expected: 1\n");
 	result = forLoopTwoTestThree();
-	printf("Received: %d", result);
+	printf("Received: %d\n", result);
 	
 	if(result){
 		printf("Test Passed\n");
@@ -911,10 +1000,10 @@ void structureTest(){
 	
 	printf("Test 3.212: Passing floats as the for loop conditions\n");
 	fflush(stdout);
-	printf("\tOuter loop condition: i < (float)5.0, Inner loop condition j < (float)5.0\n");	
-	printf("Expected: 1");
+	printf("Outer loop condition: i < (float)5.0, Inner loop condition j < (float)5.0\n");	
+	printf("Expected: 1\n");
 	result = forLoopTwoTestFour();
-	printf("Received: %d", result);
+	printf("Received: %d\n", result);
 	
 	if(result){
 		printf("Test Passed\n");
@@ -922,12 +1011,25 @@ void structureTest(){
 	} else {
 		printf("Test Failed\n");
 	}
+	
+	printf("~~~~~~~~~~~~~~~~~~~\n");
+	
+	if(structurePassed < 22){
+		printf("Failed: %d\nSucceeded %d", (22 - structurePassed), structurePassed);
+	} else {
+		printf("SUCCESS - all tests succeeded\n");
+	}
 }
 
+/*
+ * The main test harness
+  * Written by Brandon Lit 2018-11-30
+ */
 int main(){
 	int boundTest = 0;
 	int result;
 	int structurePassed = 0;
+	int dataFlowPassed = 0;
 	
 	printf("~~~~~~~~~~~~~~~~~~~~~~~~\n");
 	printf("Test 1: Boundaries\n");
@@ -954,8 +1056,13 @@ int main(){
 	
 	printf("~~~~~~~~~~~~~~~~~~~~~~~~\n");
 	printf("Test 2: Data Flow\n");
-	printf("Test 2.1: \n");
-	printf("Test 2.2: \n");
+	dataFlowPassed = dataflow_test();
+	
+	if(3 - dataFlowPassed > 0){
+		printf("Failed: %d\nSucceeded %d", (3 - dataFlowPassed), dataFlowPassed);
+	} else {
+		printf("SUCCESS - all tests succeeded\n");
+	}
 	
 	structureTest();
 

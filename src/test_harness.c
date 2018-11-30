@@ -99,5 +99,10 @@ int main(){
 		printf("SUCCESS - all tests succeeded\n");
 	}
 	
+	printf("~~~~~~~~~~~~~~~~~~~~~~~~\n");
+	printf("Test 2: Data Flow\n");
 	
+	
+	printf("~~~~~~~~~~~~~~~~~~~~~~~~\n");
+	printf("Test 3: Structure \n");
 }
